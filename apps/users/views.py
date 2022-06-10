@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from apps.users.forms import UserRegistrationForm, LoginForm, UpdateProfileForm
-from apps.settings.models import Setting
+from apps.settings.models import Settings
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
 from apps.users.models import User
@@ -41,7 +41,7 @@ def user_login(request):
 
 def user_profile(request, id):
     user = User.objects.get(id = id)
-    home = Setting.objects.latest('id')
+    home = Settings.objects.latest('id')
     context = {
         'user' : user,
         'home' : home,

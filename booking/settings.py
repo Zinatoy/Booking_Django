@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'apps.categories',
     'apps.rooms',
     'apps.settings',
-    'apps.users'
+    'apps.users',
+    
 ]
 
 MIDDLEWARE = [

@@ -1,11 +1,14 @@
- 
+{% extends 'homepage.html' %}
+{% load static %}
+{% block content %}
+{% include 'include/header.html' %}
             <nav class="main-menu clearfix">
                 <div class="main-menu-wrapper clearfix">
                     <div class="container clearfix">
                         <div class="main-menu-wrapper-inner clearfix">
                             <div class="main-menu-wrapper__left clearfix">
                                 <div class="main-menu-wrapper__logo">
-                                    <a href="index.html"><img src="assets/images/resources/logo-1.png" alt=""></a>
+                                    <a href="index.html"><img src="{% static 'assets/images/resources/logo-1.png' %}" alt=""></a>
                                 </div>
                                 <div class="main-menu-wrapper__main-menu">
                                     <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
@@ -92,8 +95,9 @@
 
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="image-layer"
-                            style="background-image: url(assets/images/backgrounds/main-slider-1-1.jpg);"></div>
+                        <!-- <div class="image-layer"
+                            style="background-image: url(assets/images/backgrounds/main-slider-1-1.jpg);"></div> -->
+                            <img src="{% static 'assets/images/backgrounds/main-slider-1-1.jpg' %}" class="image-layer" alt="">
                         <div class="image-layer-overlay"></div>
                         <div class="container">
                             <div class="swiper-slide-inner">
@@ -107,8 +111,9 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="image-layer"
-                            style="background-image: url(assets/images/backgrounds/main-slider-1-2.jpg);"></div>
+                        <!-- <div class="image-layer"
+                            style="background-image: url(assets/images/backgrounds/main-slider-1-2.jpg);"></div> -->
+                        <img src="{% static 'assets/images/backgrounds/main-slider-1-2.jpg' %}" class="image-layer" alt="">
                         <div class="image-layer-overlay"></div>
                         <div class="container">
                             <div class="swiper-slide-inner">
@@ -122,8 +127,9 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="image-layer"
-                            style="background-image: url(assets/images/backgrounds/main-slider-1-3.jpg);"></div>
+                        <!-- <div class="image-layer"
+                            style="background-image: url(assets/images/backgrounds/main-slider-1-3.jpg);"></div> -->
+                        <img src=" {% static 'assets/images/backgrounds/main-slider-1-3.jpg' %}" class="image-layer" alt="">
                         <div class="image-layer-overlay"></div>
                         <div class="container">
                             <div class="swiper-slide-inner">
@@ -194,7 +200,7 @@
                     <div class="col-xl-3 col-lg-3">
                         <div class="destinations-one__single">
                             <div class="destinations-one__img">
-                                <img src="assets/images/destination/destination-1-1.png" alt="">
+                                <img src="{% static 'assets/images/destination/destination-1-1.png' %}" alt="">
                                 <div class="destinations-one__content">
                                     <h2 class="destinations-one__title"><a href="destinations-details.html">Spain</a>
                                     </h2>
@@ -208,7 +214,7 @@
                     <div class="col-xl-6 col-lg-6">
                         <div class="destinations-one__single">
                             <div class="destinations-one__img">
-                                <img src="assets/images/destination/destination-1-2.png" alt="">
+                                <img src="{% static 'assets/images/destination/destination-1-2.' %}png" alt="">
                                 <div class="destinations-one__content">
                                     <p class="destinations-one__sub-title">Wildlife</p>
                                     <h2 class="destinations-one__title"><a href="destinations-details.html">Thailand</a>
@@ -223,7 +229,7 @@
                     <div class="col-xl-3 col-lg-3">
                         <div class="destinations-one__single">
                             <div class="destinations-one__img">
-                                <img src="assets/images/destination/destination-1-3.png" alt="">
+                                <img src="{% static 'assets/images/destination/destination-1-3.' %}png" alt="">
                                 <div class="destinations-one__content">
                                     <h2 class="destinations-one__title"><a href="destinations-details.html">Africa</a>
                                     </h2>
@@ -238,7 +244,7 @@
                     <div class="col-xl-6 col-lg-6">
                         <div class="destinations-one__single">
                             <div class="destinations-one__img">
-                                <img src="assets/images/destination/destination-1-4.png" alt="">
+                                <img src="{% static 'assets/images/destination/destination-1-4.' %}png" alt="">
                                 <div class="destinations-one__content">
                                     <h2 class="destinations-one__title"><a
                                             href="destinations-details.html">Australia</a></h2>
@@ -252,7 +258,7 @@
                     <div class="col-xl-6 col-lg-6">
                         <div class="destinations-one__single">
                             <div class="destinations-one__img">
-                                <img src="assets/images/destination/destination-1-5.png" alt="">
+                                <img src="{% static 'assets/images/destination/destination-1-5.' %}png" alt="">
                                 <div class="destinations-one__content">
                                     <p class="destinations-one__sub-title">Adventure</p>
                                     <h2 class="destinations-one__title"><a
@@ -273,9 +279,9 @@
         <!--About One Start-->
         <section class="about-one">
             <div class="about-one-shape-1 wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">
-                <img src="assets/images/shapes/about-one-shape-1.png" alt="">
+                <img src="{% static 'assets/images/shapes/about-one-shape-1.png' %}" alt="">
             </div>
-            <div class="about-one-shape-2 float-bob-y"><img src="assets/images/shapes/about-one-shape-2.png" alt="">
+            <div class="about-one-shape-2 float-bob-y"><img src="{% static 'assets/images/shapes/about-one-shape-2.png' %}" alt="">
             </div>
             <div class="container">
                 <div class="row">
@@ -283,7 +289,7 @@
                         <div class="about-one__left">
                             <div class="about-one__img-box">
                                 <div class="about-one__img">
-                                    <img src="assets/images/resources/about-one-img-1.png" alt="">
+                                    <img src="{% static 'assets/images/resources/about-one-img-1.png" alt' %}="">
                                 </div>
                                 <div class="about-one__call">
                                     <div class="about-one__call-icon">
@@ -356,7 +362,7 @@
                         <div class="popular-tours__carousel owl-theme owl-carousel">
                             <div class="popular-tours__single">
                                 <div class="popular-tours__img">
-                                    <img src="assets/images/resources/popular-tours__img-1.jpg" alt="">
+                                    <img src="{% static 'assets/images/resources/popular-tours__img-1.jpg' %}" alt="">
                                     <div class="popular-tours__icon">
                                         <a href="tour-details.html">
                                             <i class="fa fa-heart"></i>
@@ -379,7 +385,7 @@
                             </div>
                             <div class="popular-tours__single">
                                 <div class="popular-tours__img">
-                                    <img src="assets/images/resources/popular-tours__img-2.jpg" alt="">
+                                    <img src="{% static 'assets/images/resources/popular-tours__img-2.jpg' %}" alt="">
                                     <div class="popular-tours__icon">
                                         <a href="tour-details.html">
                                             <i class="fa fa-heart"></i>
@@ -402,7 +408,7 @@
                             </div>
                             <div class="popular-tours__single">
                                 <div class="popular-tours__img">
-                                    <img src="assets/images/resources/popular-tours__img-3.jpg" alt="">
+                                    <img src="{% static 'assets/images/resources/popular-tours__img-3.jpg' %}" alt="">
                                     <div class="popular-tours__icon">
                                         <a href="tour-details.html">
                                             <i class="fa fa-heart"></i>
@@ -425,7 +431,7 @@
                             </div>
                             <div class="popular-tours__single">
                                 <div class="popular-tours__img">
-                                    <img src="assets/images/resources/popular-tours__img-4.jpg" alt="">
+                                    <img src="{% static 'assets/images/resources/popular-tours__img-4.jpg' %}" alt="">
                                     <div class="popular-tours__icon">
                                         <a href="tour-details.html">
                                             <i class="fa fa-heart"></i>
@@ -448,7 +454,7 @@
                             </div>
                             <div class="popular-tours__single">
                                 <div class="popular-tours__img">
-                                    <img src="assets/images/resources/popular-tours__img-1.jpg" alt="">
+                                    <img src="{% static 'assets/images/resources/popular-tours__img-1.jpg' %}" alt="">
                                     <div class="popular-tours__icon">
                                         <a href="tour-details.html">
                                             <i class="fa fa-heart"></i>
@@ -471,7 +477,7 @@
                             </div>
                             <div class="popular-tours__single">
                                 <div class="popular-tours__img">
-                                    <img src="assets/images/resources/popular-tours__img-2.jpg" alt="">
+                                    <img src="{% static 'assets/images/resources/popular-tours__img-2.jpg' %}" alt="">
                                     <div class="popular-tours__icon">
                                         <a href="tour-details.html">
                                             <i class="fa fa-heart"></i>
@@ -494,7 +500,7 @@
                             </div>
                             <div class="popular-tours__single">
                                 <div class="popular-tours__img">
-                                    <img src="assets/images/resources/popular-tours__img-3.jpg" alt="">
+                                    <img src="{% static 'assets/images/resources/popular-tours__img-3.jpg' %}" alt="">
                                     <div class="popular-tours__icon">
                                         <a href="tour-details.html">
                                             <i class="fa fa-heart"></i>
@@ -517,7 +523,7 @@
                             </div>
                             <div class="popular-tours__single">
                                 <div class="popular-tours__img">
-                                    <img src="assets/images/resources/popular-tours__img-4.jpg" alt="">
+                                    <img src="{% static 'assets/images/resources/popular-tours__img-4.jpg' %}" alt="">
                                     <div class="popular-tours__icon">
                                         <a href="tour-details.html">
                                             <i class="fa fa-heart"></i>
@@ -540,7 +546,7 @@
                             </div>
                             <div class="popular-tours__single">
                                 <div class="popular-tours__img">
-                                    <img src="assets/images/resources/popular-tours__img-1.jpg" alt="">
+                                    <img src="{% static 'assets/images/resources/popular-tours__img-1.jpg' %}" alt="">
                                     <div class="popular-tours__icon">
                                         <a href="tour-details.html">
                                             <i class="fa fa-heart"></i>
@@ -563,7 +569,7 @@
                             </div>
                             <div class="popular-tours__single">
                                 <div class="popular-tours__img">
-                                    <img src="assets/images/resources/popular-tours__img-2.jpg" alt="">
+                                    <img src="{% static 'assets/images/resources/popular-tours__img-2.jpg' %}" alt="">
                                     <div class="popular-tours__icon">
                                         <a href="tour-details.html">
                                             <i class="fa fa-heart"></i>
@@ -586,7 +592,7 @@
                             </div>
                             <div class="popular-tours__single">
                                 <div class="popular-tours__img">
-                                    <img src="assets/images/resources/popular-tours__img-3.jpg" alt="">
+                                    <img src="{% static 'assets/images/resources/popular-tours__img-3.jpg' %}" alt="">
                                     <div class="popular-tours__icon">
                                         <a href="tour-details.html">
                                             <i class="fa fa-heart"></i>
@@ -609,7 +615,7 @@
                             </div>
                             <div class="popular-tours__single">
                                 <div class="popular-tours__img">
-                                    <img src="assets/images/resources/popular-tours__img-4.jpg" alt="">
+                                    <img src="{% static 'assets/images/resources/popular-tours__img-4.jpg' %}" alt="">
                                     <div class="popular-tours__icon">
                                         <a href="tour-details.html">
                                             <i class="fa fa-heart"></i>
@@ -638,9 +644,10 @@
         <!--Popular Tours End-->
 
         <!--Video One Start-->
-        <section class="video-one">
+        <!-- <section class="video-one">
             <div class="video-one-bg jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
-                style="background-image: url(assets/images/backgrounds/video-one-bg.jpg)"></div>
+                style="background-image: url(assets/images/backgrounds/video-one-bg.jpg)"></div> -->
+                <img src="{% static 'assets/images/backgrounds/video-one-bg.jpg' %}" class="video-one-bg jarallax"  alt="">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 col-lg-6">
@@ -694,7 +701,8 @@
 
         <!--Brand One Start-->
         <section class="brand-one">
-            <div class="brand-one-shape" style="background-image: url(assets/images/shapes/brand-one-shape.png)"></div>
+            <!-- <div class="brand-one-shape" style="background-image: url(assets/images/shapes/brand-one-shape.png)"></div> -->
+            <img src="{% static 'assets/images/shapes/brand-one-shape.png' %}"  class="brand-one-shape"  alt="">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-3">
@@ -732,34 +740,34 @@
                     }}'>
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
-                                        <img src="assets/images/brand/brand-one-1.png" alt="">
+                                        <img src="{% static 'assets/images/brand/brand-one-1.png' %}" alt="">
                                     </div><!-- /.swiper-slide -->
                                     <div class="swiper-slide">
-                                        <img src="assets/images/brand/brand-one-2.png" alt="">
+                                        <img src="{% static 'assets/images/brand/brand-one-2.png' %}" alt="">
                                     </div><!-- /.swiper-slide -->
                                     <div class="swiper-slide">
-                                        <img src="assets/images/brand/brand-one-3.png" alt="">
+                                        <img src="{% static 'assets/images/brand/brand-one-3.png' %}" alt="">
                                     </div><!-- /.swiper-slide -->
                                     <div class="swiper-slide">
-                                        <img src="assets/images/brand/brand-one-4.png" alt="">
+                                        <img src="{% static 'assets/images/brand/brand-one-4.png' %}" alt="">
                                     </div><!-- /.swiper-slide -->
                                     <div class="swiper-slide">
-                                        <img src="assets/images/brand/brand-one-5.png" alt="">
+                                        <img src="{% static 'assets/images/brand/brand-one-5.png' %}" alt="">
                                     </div><!-- /.swiper-slide -->
                                     <div class="swiper-slide">
-                                        <img src="assets/images/brand/brand-one-1.png" alt="">
+                                        <img src="{% static 'assets/images/brand/brand-one-1.png' %}" alt="">
                                     </div><!-- /.swiper-slide -->
                                     <div class="swiper-slide">
-                                        <img src="assets/images/brand/brand-one-2.png" alt="">
+                                        <img src="{% static 'assets/images/brand/brand-one-2.png' %}" alt="">
                                     </div><!-- /.swiper-slide -->
                                     <div class="swiper-slide">
-                                        <img src="assets/images/brand/brand-one-3.png" alt="">
+                                        <img src="{% static 'assets/images/brand/brand-one-3.png' %}" alt="">
                                     </div><!-- /.swiper-slide -->
                                     <div class="swiper-slide">
-                                        <img src="assets/images/brand/brand-one-4.png" alt="">
+                                        <img src="{% static 'assets/images/brand/brand-one-4.png' %}" alt="">
                                     </div><!-- /.swiper-slide -->
                                     <div class="swiper-slide">
-                                        <img src="assets/images/brand/brand-one-5.png" alt="">
+                                        <img src="{% static 'assets/images/brand/brand-one-5.png' %}" alt="">
                                     </div><!-- /.swiper-slide -->
                                 </div>
                             </div>
@@ -773,10 +781,10 @@
         <!--Testimonial One Start-->
         <section class="testimonial-one">
             <div class="testimonial-one-shape-2 float-bob-y">
-                <img src="assets/images/shapes/testimonial-one-shape-2.png" alt="">
+            <img src="{% static 'assets/images/shapes/testimonial-one-shape-2.png' %}" alt="">
             </div>
             <div class="testimonial-one-shape-3 wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms">
-                <img src="assets/images/shapes/testimonial-one-shape-3.png" alt="">
+            <img src="{% static 'assets/images/shapes/testimonial-one-shape-3.png' %}" alt="">
             </div>
             <div class="container">
                 <div class="section-title text-center">
@@ -788,7 +796,7 @@
                         <div class="testimonial-one__carousel owl-theme owl-carousel">
                             <div class="testimonial-one__single">
                                 <div class="testimonial-one__img">
-                                    <img src="assets/images/testimonial/testimonial-one-img-1.png" alt="">
+                                <img src="{% static 'assets/images/testimonial/testimonial-one-img-1.png' %}" alt="">
                                 </div>
                                 <div class="testimonail-one__content">
                                     <div class="testimonial-one__top-revivew-box">
@@ -809,7 +817,7 @@
                             </div>
                             <div class="testimonial-one__single">
                                 <div class="testimonial-one__img">
-                                    <img src="assets/images/testimonial/testimonial-one-img-2.png" alt="">
+                                <img src="{% static 'assets/images/testimonial/testimonial-one-img-2.png' %}" alt="">
                                 </div>
                                 <div class="testimonail-one__content">
                                     <div class="testimonial-one__top-revivew-box">
@@ -830,7 +838,7 @@
                             </div>
                             <div class="testimonial-one__single">
                                 <div class="testimonial-one__img">
-                                    <img src="assets/images/testimonial/testimonial-one-img-3.png" alt="">
+                                        <img src="{% static 'assets/images/testimonial/testimonial-one-img-3.png' %}" alt="">
                                 </div>
                                 <div class="testimonail-one__content">
                                     <div class="testimonial-one__top-revivew-box">
@@ -851,7 +859,7 @@
                             </div>
                             <div class="testimonial-one__single">
                                 <div class="testimonial-one__img">
-                                    <img src="assets/images/testimonial/testimonial-one-img-1.png" alt="">
+                                <img src="{% static 'assets/images/testimonial/testimonial-one-img-1.png' %}" alt="">
                                 </div>
                                 <div class="testimonail-one__content">
                                     <div class="testimonial-one__top-revivew-box">
@@ -872,7 +880,7 @@
                             </div>
                             <div class="testimonial-one__single">
                                 <div class="testimonial-one__img">
-                                    <img src="assets/images/testimonial/testimonial-one-img-2.png" alt="">
+                                <img src="{% static 'assets/images/testimonial/testimonial-one-img-2.png' %}" alt="">
                                 </div>
                                 <div class="testimonail-one__content">
                                     <div class="testimonial-one__top-revivew-box">
@@ -893,7 +901,7 @@
                             </div>
                             <div class="testimonial-one__single">
                                 <div class="testimonial-one__img">
-                                    <img src="assets/images/testimonial/testimonial-one-img-3.png" alt="">
+                                <img src="{% static 'assets/images/testimonial/testimonial-one-img-3.png' %}" alt="">
                                 </div>
                                 <div class="testimonail-one__content">
                                     <div class="testimonial-one__top-revivew-box">
@@ -914,7 +922,7 @@
                             </div>
                             <div class="testimonial-one__single">
                                 <div class="testimonial-one__img">
-                                    <img src="assets/images/testimonial/testimonial-one-img-1.png" alt="">
+                                <img src="{% static 'assets/images/testimonial/testimonial-one-img-1.png' %}" alt="">
                                 </div>
                                 <div class="testimonail-one__content">
                                     <div class="testimonial-one__top-revivew-box">
@@ -935,7 +943,7 @@
                             </div>
                             <div class="testimonial-one__single">
                                 <div class="testimonial-one__img">
-                                    <img src="assets/images/testimonial/testimonial-one-img-2.png" alt="">
+                                <img src="{% static 'assets/images/testimonial/testimonial-one-img-2.png' %}" alt="">
                                 </div>
                                 <div class="testimonail-one__content">
                                     <div class="testimonial-one__top-revivew-box">
@@ -956,7 +964,7 @@
                             </div>
                             <div class="testimonial-one__single">
                                 <div class="testimonial-one__img">
-                                    <img src="assets/images/testimonial/testimonial-one-img-3.png" alt="">
+                                <img src="{% static 'assets/images/testimonial/testimonial-one-img-3.png' %}" alt="">
                                 </div>
                                 <div class="testimonail-one__content">
                                     <div class="testimonial-one__top-revivew-box">
@@ -987,49 +995,50 @@
         <!--Gallery One Start-->
         <section class="gallery-one">
             <div class="gallery-one-bg" style="background-image: url(assets/images/shapes/gallery-map.png)"></div>
+            <img src="{% static 'assets/images/shapes/gallery-map.png' %}" alt="">
             <div class="gallery-one__container-box clearfix">
                 <ul class="list-unstyled gallery-one__content clearfix">
                     <li class="wow fadeInUp" data-wow-delay="100ms">
                         <div class="gallery-one__img-box">
-                            <img src="assets/images/gallery/gallery-one-img-1.jpg" alt="">
+                        <img src="{% static 'assets/images/gallery/gallery-one-img-1.jpg' %}" alt="">
                             <div class="gallery-one__iocn">
-                                <a class="img-popup" href="assets/images/gallery/gallery-one-img-1.jpg"><i
+                            <a class="img-popup" href="{% static 'assets/images/gallery/gallery-one-img-1.jpg' %}"><i
                                         class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </li>
                     <li class="wow fadeInUp" data-wow-delay="200ms">
                         <div class="gallery-one__img-box">
-                            <img src="assets/images/gallery/gallery-one-img-2.jpg" alt="">
+                            <img src="{% static 'assets/images/gallery/gallery-one-img-2.jpg' %}" alt="">
                             <div class="gallery-one__iocn">
-                                <a class="img-popup" href="assets/images/gallery/gallery-one-img-2.jpg"><i
+                                <a class="img-popup" href="{% static 'assets/images/gallery/gallery-one-img-2.jpg' %}"><i
                                         class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </li>
                     <li class="wow fadeInUp" data-wow-delay="300ms">
                         <div class="gallery-one__img-box">
-                            <img src="assets/images/gallery/gallery-one-img-3.jpg" alt="">
+                            <img src="{% static 'assets/images/gallery/gallery-one-img-3.jpg' %}" alt="">
                             <div class="gallery-one__iocn">
-                                <a class="img-popup" href="assets/images/gallery/gallery-one-img-3.jpg"><i
+                                <a class="img-popup" href="{% static 'assets/images/gallery/gallery-one-img-3.jpg' %}"><i
                                         class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </li>
                     <li class="wow fadeInUp" data-wow-delay="400ms">
                         <div class="gallery-one__img-box">
-                            <img src="assets/images/gallery/gallery-one-img-4.jpg" alt="">
+                            <img src="{% static 'assets/images/gallery/gallery-one-img-4.jpg' %}" alt="">
                             <div class="gallery-one__iocn">
-                                <a class="img-popup" href="assets/images/gallery/gallery-one-img-4.jpg"><i
+                                <a class="img-popup" href="{% static 'assets/images/gallery/gallery-one-img-4.jpg' %}"><i
                                         class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </li>
                     <li class="wow fadeInUp" data-wow-delay="500ms">
                         <div class="gallery-one__img-box">
-                            <img src="assets/images/gallery/gallery-one-img-5.jpg" alt="">
+                            <img src="{% static 'assets/images/gallery/gallery-one-img-5.jpg' %}" alt="">
                             <div class="gallery-one__iocn">
-                                <a class="img-popup" href="assets/images/gallery/gallery-one-img-5.jpg"><i
+                                <a class="img-popup" href="{% static 'assets/images/gallery/gallery-one-img-5.jpg' %}"><i
                                         class="fab fa-instagram"></i></a>
                             </div>
                         </div>
@@ -1043,15 +1052,17 @@
         <section class="why-choose">
             <div class="why-choose__container">
                 <div class="why-choose__left">
-                    <div class="why-choose__left-bg"
-                        style="background-image: url(assets/images/backgrounds/why-choose-left-bg.jpg)"></div>
+                    <!-- <div class="why-choose__left-bg"
+                        style="background-image: url(assets/images/backgrounds/why-choose-left-bg.jpg)"></div> -->
+                        <img src="{% static 'assets/images/backgrounds/why-choose-left-bg.jpg' %}"class="why-choose__left-bg" alt="">
                     <div class="why-choose__toggle">
                         <p>Trips <br> & tours</p>
                     </div>
                 </div>
                 <div class="why-choose__right">
-                    <div class="why-choose__right-map"
-                        style="background-image: url(assets/images/shapes/why-choose-right-map.png)"></div>
+                    <!-- <div class="why-choose__right-map"
+                        style="background-image: url(assets/images/shapes/why-choose-right-map.png)"></div> -->
+                        <img src="{% static 'assets/images/shapes/why-choose-right-map.png' %}" class="why-choose__right-map" alt="">
                     <div class="why-choose__right-content">
                         <div class="section-title text-left">
                             <span class="section-title__tagline">Our benefit lists</span>
@@ -1114,7 +1125,7 @@
                             <!--News One Single-->
                             <div class="news-one__single">
                                 <div class="news-one__img">
-                                    <img src="assets/images/blog/news-one-img-1.jpg" alt="">
+                                    <img src="{% static 'assets/images/blog/news-one-img-1.jpg' %}" alt="">
                                     <a href="news-details.html">
                                         <span class="news-one__plus"></span>
                                     </a>
@@ -1138,7 +1149,7 @@
                             <!--News One Single-->
                             <div class="news-one__single">
                                 <div class="news-one__img">
-                                    <img src="assets/images/blog/news-one-img-2.jpg" alt="">
+                                    <img src="{% static 'assets/images/blog/news-one-img-2.jpg' %}" alt="">
                                     <a href="news-details.html">
                                         <span class="news-one__plus"></span>
                                     </a>
@@ -1162,7 +1173,7 @@
                             <!--News One Single-->
                             <div class="news-one__single">
                                 <div class="news-one__img">
-                                    <img src="assets/images/blog/news-one-img-3.jpg" alt="">
+                                    <img src="{% static 'assets/images/blog/news-one-img-3.jpg' %]" alt="">
                                     <a href="news-details.html">
                                         <span class="news-one__plus"></span>
                                     </a>
@@ -1198,7 +1209,7 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="assets/images/resources/logo-2.png" width="155"
+                <a href="index.html" aria-label="logo image"><img src="{% static 'assets/images/resources/logo-2.png' %}" width="155"
                         alt="" /></a>
             </div>
             <!-- /.logo-box -->
@@ -1249,4 +1260,5 @@
 
 
 
- 
+{% include 'include/footer.html' %}
+{% endblock %}
