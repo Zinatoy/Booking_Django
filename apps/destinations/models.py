@@ -2,6 +2,8 @@ from tabnanny import verbose
 from django.db import models
 
 # Create your models here.
+
+#destinations
 class Country(models.Model):
     title = models.CharField(max_length=255)
     image = models.ImageField(upload_to = 'image/', verbose_name="Картинка")
@@ -14,6 +16,8 @@ class Country(models.Model):
         verbose_name = "Страна"
         verbose_name_plural = "Страны"
 
+
+#destinations-details
 class Country_details(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
