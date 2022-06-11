@@ -8,13 +8,13 @@
                         <div class="main-menu-wrapper-inner clearfix">
                             <div class="main-menu-wrapper__left clearfix">
                                 <div class="main-menu-wrapper__logo">
-                                    <a href="index.html"><img src="{% static 'assets/images/resources/logo-1.png' %}" alt=""></a>
+                                    <a href="{% url 'index' %}"><img src="{{ home.logo.url }}" alt=""></a>
                                 </div>
                                 <div class="main-menu-wrapper__main-menu">
                                     <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                                     <ul class="main-menu__list">
                                         <li class="dropdown current">
-                                            <a href="index.html">Home</a>
+                                            <a href="{% url 'index' %}">Home</a>
                                             <ul>
                                                 <li>
                                                     <a href="index.html">Home One</a>
@@ -993,9 +993,9 @@
         <!--Testimonial One End-->
 
         <!--Gallery One Start-->
-        <section class="gallery-one">
-            <div class="gallery-one-bg" style="background-image: url(assets/images/shapes/gallery-map.png)"></div>
-            <img src="{% static 'assets/images/shapes/gallery-map.png' %}" alt="">
+        <!-- <section class="gallery-one">
+            <div class="gallery-one-bg" style="background-image: url(assets/images/shapes/gallery-map.png)"></div> -->
+            <img src="{% static 'assets/images/shapes/gallery-map.png' %}" class="gallery-one-bg"alt="">
             <div class="gallery-one__container-box clearfix">
                 <ul class="list-unstyled gallery-one__content clearfix">
                     <li class="wow fadeInUp" data-wow-delay="100ms">
@@ -1203,13 +1203,14 @@
 
 
     <div class="mobile-nav__wrapper">
+        
         <div class="mobile-nav__overlay mobile-nav__toggler"></div>
         <!-- /.mobile-nav__overlay -->
         <div class="mobile-nav__content">
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="{% static 'assets/images/resources/logo-2.png' %}" width="155"
+                <a href="index.html" aria-label="{% url 'index' %}"><img src="{{ home.logo.url }}" width="155"
                         alt="" /></a>
             </div>
             <!-- /.logo-box -->

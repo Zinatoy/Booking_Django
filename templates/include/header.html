@@ -1,6 +1,6 @@
- 
+{% load static %}
     <div class="preloader">
-        <img class="preloader__image" width="60" src="assets/images/loader.png" alt="" />
+        <img class="preloader__image" width="60" href="{% url 'index' %}" src="{{ home.logo.url }}" alt="" />
     </div>
     <!-- /.preloader -->
     <div class="page-wrapper">
@@ -15,7 +15,7 @@
                                         <span class="icon-phone-call"></span>
                                     </div>
                                     <div class="text">
-                                        <a href="tel:+92-666-999-0000">+ 92 666 999 0000</a>
+                                        <a href="tel:+92-666-999-0000">{{ home.phone }}</a>
                                     </div>
                                 </li>
                                 <li>
@@ -23,7 +23,7 @@
                                         <span class="icon-at"></span>
                                     </div>
                                     <div class="text">
-                                        <a href="mailto:needhelp@company.com">needhelp@company.com</a>
+                                        <a href="mailto:needhelp@company.com">{{ home.email }}</a>
                                     </div>
                                 </li>
                             </ul>
@@ -31,7 +31,7 @@
                         <div class="main-header__top-right">
                             <div class="main-header__top-right-inner">
                                 <div class="main-header__top-right-social">
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i>{{ home.facebook }}</a>
                                     <a href="#"><i class="fab fa-twitter"></i></a>
                                     <a href="#"><i class="fab fa-instagram"></i></a>
                                     <a href="#"><i class="fab fa-dribbble"></i></a>

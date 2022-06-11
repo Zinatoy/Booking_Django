@@ -40,9 +40,10 @@ INSTALLED_APPS = [
 
     #apps
     'apps.categories',
-    'apps.rooms',
+    'apps.destinations',
     'apps.settings',
     'apps.users',
+    'apps.tours',
     
 ]
 
