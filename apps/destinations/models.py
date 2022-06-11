@@ -29,7 +29,7 @@ class Country_details(models.Model):
         ('KGS', 'KGS'),
         ('RUB', 'RUB'),
     )
-    area = models.IntegerField(max_length=255)
+    area = models.IntegerField()
 
 
     def __str__(self):
