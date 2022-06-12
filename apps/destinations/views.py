@@ -6,7 +6,7 @@ from apps.categories.models import Category
 
 def country(request):
     country_categories = Category.objects.all()
-    country = Country.objects.all()
+    country = Country.objects.latest('id')
     home = Settings.objects.latest('id')
     context = {
         'country_categories' : country_categories,

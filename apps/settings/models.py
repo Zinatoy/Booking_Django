@@ -32,7 +32,7 @@ class Partners(models.Model):
         verbose_name = "Партнёра"
 
     def __str__(self):
-        return self.title
+        return self.link_partner
 
 
 #team

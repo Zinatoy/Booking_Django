@@ -2,78 +2,7 @@
 {% load static %}
 {% block content %}
 {% include 'include/header.html' %}
-            <nav class="main-menu clearfix">
-                <div class="main-menu-wrapper clearfix">
-                    <div class="container clearfix">
-                        <div class="main-menu-wrapper-inner clearfix">
-                            <div class="main-menu-wrapper__left clearfix">
-                                <div class="main-menu-wrapper__logo">
-                                    <a href="{% url 'index' %}"><img src="{{ home.logo.url }}" alt=""></a>
-                                </div>
-                                <div class="main-menu-wrapper__main-menu">
-                                    <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
-                                    <ul class="main-menu__list">
-                                        <li class="dropdown current">
-                                            <a href="{% url 'index' %}">Home</a>
-                                            <ul>
-                                                <li>
-                                                    <a href="index.html">Home One</a>
-                                                </li>
-                                                <li><a href="index2.html">Home Two</a></li>
-                                                <li class="dropdown">
-                                                    <a href="#">Header Styles</a>
-                                                    <ul>
-                                                        <li><a href="index.html">Header One</a></li>
-                                                        <li><a href="index.html">Header Two</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#">Destinations</a>
-                                            <ul>
-                                                <li><a href="destinations.html">Destinations</a></li>
-                                                <li><a href="destinations-details.html">Destinations Detail</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#">Tours</a>
-                                            <ul>
-                                                <li><a href="tours.html">Tours</a></li>
-                                                <li><a href="tours-list.html">Tours List</a></li>
-                                                <li><a href="tour-details.html">Tours Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#">Pages</a>
-                                            <ul>
-                                                <li><a href="about.html">About</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#">News</a>
-                                            <ul>
-                                                <li><a href="news.html">News</a></li>
-                                                <li><a href="news-details.html">News Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="main-menu-wrapper__right">
-                                <a href="#" class="main-menu__search search-toggler icon-magnifying-glass"></a>
-                                <a href="#" class="main-menu__user icon-avatar"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-
-        <div class="stricky-header stricked-menu main-menu">
-            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-        </div><!-- /.stricky-header -->
+ 
 
         <!--Main Slider Start-->
         <section class="main-slider">

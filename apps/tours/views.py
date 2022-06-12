@@ -4,10 +4,9 @@ from apps.settings.models import Settings
 from apps.categories.models import Category
 # Create your views here.
 
-def tour(request):
+def tours_list(request):
     home = Settings.objects.latest('id')
     tour = Tour.objects.all()
-    plan = Tour_plan.objects.all()
     category = Category.objects.all()
     context = {
         'home': home,
