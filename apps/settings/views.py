@@ -18,3 +18,16 @@ def index(request):
 
     return render(request , 'index.html', context)
 
+def about(request):
+    about = About.objects.all() 
+    home = Settings.objects.latest('id')
+    partners = Partners.objects.all().order_by('-id') 
+    team = Team.objects.all().order_by('-id')
+    context = {
+        'home':home, 
+        'partners' : partners,
+        'team' : team, 
+        'about' : about
+    }
+    return render(request,'about.html',context)
+
