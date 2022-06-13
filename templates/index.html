@@ -126,21 +126,21 @@
                     <h2 class="section-title__title">Go Exotic Places</h2>
                 </div>
                 <div class="row masonary-layout">
-                    {% for country in country %}
                     <div class="col-xl-3 col-lg-3">
                         <div class="destinations-one__single">
                             <div class="destinations-one__img">
                                 <img src="{{ country.image.url }}" alt="">
+                                <!-- {% for country in country %} -->
                                 <div class="destinations-one__content">
                                     <h2 class="destinations-one__title"><a href="{% url 'country_details' %}">{{ country.title}}</a></h2>
                                 </div>
+                                <!-- {% endfor %} -->
                                 <div class="destinations-one__button">
                                     <a href="#">6 tours</a>
                                 </div>
                             </div>
                         </div>
                     </div> 
-                    {% endfor %}
                 </div>
             </div>
         </section>
