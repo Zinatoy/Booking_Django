@@ -7,35 +7,42 @@ from apps.tours.forms import TourCreateForm, TourUpdateForm, EmailPostForm
 from django.core.mail import send_mail
 # Create your views here.
 
-def tour(request):
+def tour_plan(request):
     home = Settings.objects.latest('id')
     tour = Tour.objects.all()
     category = Category.objects.all()
+
+    if 'comment' in request.POST:
+        id = request.POST.get('post_id')
+        message = request.POST.get('comment_message')
+        comment = Comment.objects.create(message=message, tour=tour, user=request.user)
+        return redirect('tour', tour.id)
     context = {
         'home': home,
         'tour' : tour,
         'category' : category,
     }
-    return render(request, 'tour.html', context)
+    return render(request, 'tour_plan.html', context)
 
 
-def tour_plan(request, id):
+def tour(request,id):
     home = Settings.objects.latest('id')
     tour= Tour.objects.get(id = id)
     random = Tour.objects.all().order_by('?')[:20]
-    tour_plan = Tour_plan.objects.all()
+    tour_plan = Tour_plan.objects.get(id=id)
     category = Category.objects.all().order_by('?')[:5]
+    
     if 'like' in request.POST:
         try:
             like = Like.objects.get(user=request.user, tour=tour)
             like.delete()
         except:
             Like.objects.create(user=request.user, tour=tour)
-    if 'comment' in request.POST:
-        id = request.POST.get('post_id')
-        message = request.POST.get('comment_message')
-        comment = Comment.objects.create(message=message, tour=tour, user=request.user)
-        return redirect('tour_plan', tour.id)
+    # if 'comment' in request.POST:
+    #     id = request.POST.get('post_id')
+    #     message = request.POST.get('comment_message')
+    #     comment = Comment.objects.create(message=message, tour=tour, user=request.user)
+    #     return redirect('tour', tour.id)
 
     context = {
         'home': home,
