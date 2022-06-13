@@ -9,16 +9,20 @@
         <section class="destinations-details">
             <div class="container">
                 <div class="row">
+
                     <div class="col-xl-8 col-lg-7">
                         <div class="destinations-details__left">
+                            {% for detail in country_details %}
                             <div class="destinations-details__img">
-                                <img src="{% static 'assets/images/resources/destinations-details-img-1.jpg' %}" alt="">
+                                <img src="{{ detail.image.url }}" alt="">
                             </div>
                             <div class="destinations-details__discover">
-                                <h3 class="destinations-details__title">Discover Spain</h3>
-                                <p class="destinations-details__discover-text-1">Lorem ipsum available isn but the majority have suffered alteratin in some or form injected. Lorem Ipsum. Proin gravida nibh vel velit auctor aliqueenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. vulputate cursus a sit amet mauris. Morbi accumsan ipsum veliam nec tellus a odio tincidunt auctor.</p>
-                                <p class="destinations-details__discover-text-2">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some injected or  words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary,</p>
-                            </div>
+                                <h3 class="destinations-details__title">{{ detail.title }}</h3>
+                                <p class="destinations-details__discover-text-1">{{ detail.description }}</p>
+                             </div>
+                            {% endfor %}
+
+                            {% for details in country_details %}
                             <div class="destinations-details__overview">
                                <h3 class="destinations-details__title">Overview</h3>
                                 <ul class="list-unstyled destinations-details__overview-list">
@@ -27,7 +31,7 @@
                                             <p>Country</p>
                                         </div>
                                         <div class="destinations-details__overview-right">
-                                            <p>Americas</p>
+                                            <p>{{ details.country }}</p>
                                         </div>
                                     </li>
                                     <li>
@@ -35,7 +39,7 @@
                                             <p>Visa Requirements</p>
                                         </div>
                                         <div class="destinations-details__overview-right">
-                                            <p>Personal Documents Requied</p>
+                                            <p>{{ details.visa }}</p>
                                         </div>
                                     </li>
                                     <li>
@@ -43,7 +47,7 @@
                                             <p>Languages Spoken</p>
                                         </div>
                                         <div class="destinations-details__overview-right">
-                                            <p>English</p>
+                                            <p>{{ details.language }}</p>
                                         </div>
                                     </li>
                                     <li>
@@ -59,11 +63,12 @@
                                             <p>Area (km2)</p>
                                         </div>
                                         <div class="destinations-details__overview-right">
-                                            <p>88.000 km2</p>
+                                            <p>{{ details.area }} km2</p>
                                         </div>
                                     </li>
                                 </ul>
                             </div>
+                            {% endfor %}
                             <div class="destinations-details__faq">
                                 <div class="accrodion-grp" data-grp-name="faq-one-accrodion">
                                     <div class="accrodion active">
