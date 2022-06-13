@@ -74,7 +74,7 @@ def tour_update(request, id):
     form = TourUpdateForm(request.POST or None, instance=product)
     if form.is_valid():
         form.save()
-        return redirect('tour_plan', product.id)
+        return redirect('tour/tour_plan', product.id)
     context = {
         'form' : form
     }
