@@ -29,7 +29,7 @@ def index(request):
     return render(request , 'index.html', context)
 
 def about(request):
-    about = About.objects.all() 
+    about = About.objects.latest('id')
     home = Settings.objects.latest('id')
     partners = Partners.objects.all().order_by('-id') 
     team = Team.objects.all().order_by('-id')

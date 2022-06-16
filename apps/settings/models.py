@@ -56,6 +56,7 @@ class Team(models.Model):
 class About(models.Model):
     title= models.CharField(max_length=100)
     description = models.TextField()
+    image = models.ImageField(upload_to="about/")
 
     def __str__(self):
         return self.title
