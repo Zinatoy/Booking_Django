@@ -3,28 +3,15 @@
 {% block content %}
 {% include 'include/header.html' %}
 
-<div class="header-bar">
-    <h1>Register</h1>
-</div>
-
-<div class="card-body">
-    <form method="POST">
-        {% csrf_token %}
-        <label>{{form.username.label}}</label>
-        {{form.username}}
-
-        <label>{{form.password1.label}}</label>
-        {{form.password1}}
-
-        <label>{{form.password2.label}}</label>
-        {{form.password2}}
-        <input style="margin-top:10px ;" class="button" type="submit" value="Register">
-    </form>
-    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
-</div>
-
-
-{% include 'include/footer.html' %}
+<form method ='post'>
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value = "Submit">
+</form>
+ 
+<h3>Already Have an Account??</h3>
+<a href = "{% url 'login' %}">Sign In Here</a>
+ 
 
 
 {% endblock content %}
