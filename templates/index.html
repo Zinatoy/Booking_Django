@@ -188,30 +188,16 @@
                                 majority have suffered alteration in some form, by injected hum randomised words which
                                 don't look even slightly.</p>
                             <ul class="list-unstyled about-one__points">
+                                {% for benefit in benefits %}
                                 <li>
                                     <div class="icon">
                                         <i class="fa fa-check"></i>
                                     </div>
                                     <div class="text">
-                                        <p>Invest in your simply neighborhood</p>
+                                        <p>{{benefit.title}}</p>
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Support people in free text extreme need</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>Largest global industrial business community</p>
-                                    </div>
-                                </li>
+                                </li> 
+                                {% endfor %}
                             </ul>
                             <a href="#" class="about-one__btn thm-btn">Book with us now</a>
                         </div>
@@ -632,26 +618,17 @@
                             free text available in the market for you, but the majority have suffered alteration in some
                             form.</p>
                         <ul class="list-unstyled why-choose__list">
+                            {% for benefit in benefits %}
                             <li>
                                 <div class="icon">
                                     <span class="icon-travel"></span>
                                 </div>
                                 <div class="text">
-                                    <h4>Professional and Certified</h4>
-                                    <p>Lorem ipsum is simply free text dolor sit but the majority have suffered amet,
-                                        consectetur notted.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="icon">
-                                    <span class="icon-travel-map"></span>
-                                </div>
-                                <div class="text">
-                                    <h4>Get Instant Tour Bookings</h4>
-                                    <p>Lorem ipsum is simply free text dolor sit but the majority have suffered amet,
-                                        consectetur notted.</p>
-                                </div>
-                            </li>
+                                    <h4>{{ benefit.title }}</h4>
+                                    <p>{{ benefit.description}}</p>
+                                </div> 
+                            </li> 
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
@@ -659,7 +636,7 @@
         </section>
         <!--Why Choose End-->
 
-        <!--News One Start-->
+        <!-- News One Start-->
         <section class="news-one">
             <div class="container">
                 <div class="news-one__top">
@@ -668,21 +645,16 @@
                             <div class="news-one__top-left">
                                 <div class="section-title text-left">
                                     <span class="section-title__tagline">From the blog post</span>
-                                    <h2 class="section-title__title">News & Articles</h2>
+                                    <!-- <h2 class="section-title__title">News & Articles</h2> -->
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3">
-                            <div class="news-one__top-right">
-                                <a href="news-details.html" class="news-one__btn thm-btn">View All posts</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="news-one__bottom">
+                <!-- <div class="news-one__bottom">
                     <div class="row">
                         <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
-                            <!--News One Single-->
+             
                             <div class="news-one__single">
                                 <div class="news-one__img">
                                     <img src="{% static 'assets/images/blog/news-one-img-1.jpg' %}" alt="">
@@ -705,59 +677,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
-                            <!--News One Single-->
-                            <div class="news-one__single">
-                                <div class="news-one__img">
-                                    <img src="{% static 'assets/images/blog/news-one-img-2.jpg' %}" alt="">
-                                    <a href="news-details.html">
-                                        <span class="news-one__plus"></span>
-                                    </a>
-                                    <div class="news-one__date">
-                                        <p>28 <br> <span>Aug</span></p>
-                                    </div>
-                                </div>
-                                <div class="news-one__content">
-                                    <ul class="list-unstyled news-one__meta">
-                                        <li><a href="news-details.html"><i class="far fa-user-circle"></i>Admin</a></li>
-                                        <li><a href="news-details.html"><i class="far fa-comments"></i>2 Comments</a>
-                                        </li>
-                                    </ul>
-                                    <h3 class="news-one__title">
-                                        <a href="news-details.html">Journeys are Best Measured in New Friends</a>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
-                            <!--News One Single-->
-                            <div class="news-one__single">
-                                <div class="news-one__img">
-                                    <img src="{% static 'assets/images/blog/news-one-img-3.jpg' %]" alt="">
-                                    <a href="news-details.html">
-                                        <span class="news-one__plus"></span>
-                                    </a>
-                                    <div class="news-one__date">
-                                        <p>28 <br> <span>Aug</span></p>
-                                    </div>
-                                </div>
-                                <div class="news-one__content">
-                                    <ul class="list-unstyled news-one__meta">
-                                        <li><a href="news-details.html"><i class="far fa-user-circle"></i>Admin</a></li>
-                                        <li><a href="news-details.html"><i class="far fa-comments"></i>2 Comments</a>
-                                        </li>
-                                    </ul>
-                                    <h3 class="news-one__title">
-                                        <a href="news-details.html">Travel the Most Beautiful Places in the World</a>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    
+                      
+                    </div> -->
+                <!-- </div> -->
             </div>
         </section>
-        <!--News One End-->
+        <!--News One End -->
 
  
 

@@ -13,7 +13,7 @@ def index(request):
     country = Country.objects.all() 
     tour = Tour.objects.all()
     timage = Tour_image.objects.all()
-    benefits = Benefits.objacts.all()
+    benefits = Benefits.objects.all()
     context = {
         'home' : home,
         'partners' : partners,
