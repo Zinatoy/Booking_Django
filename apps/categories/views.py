@@ -10,7 +10,7 @@ def category_detail(request, slug):
     categories = Category.objects.all().order_by('?')[:5]
     home = Settings.objects.latest('-id')
     countries = Country.objects.all().order_by('-id')
-    paginator = Paginator(products, 5)
+    paginator = Paginator(categories, 5)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     context = {

@@ -7,6 +7,8 @@ from django.db import models
 class Country(models.Model):
     title = models.CharField(max_length=255)
     image = models.ImageField(upload_to = 'image/', verbose_name="Картинка")
+    slug = models.SlugField(blank=True, null=True)
+
   
 
     def __str__(self):
@@ -33,6 +35,7 @@ class Country_details(models.Model):
         ('KGS', 'KGS'),
         ('RUB', 'RUB'),
     )
+    currency = models.CharField(choices=CURRENCY_CHOICES, default='USD', max_length=250)
     area = models.IntegerField()
 
 

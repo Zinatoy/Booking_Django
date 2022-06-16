@@ -36,7 +36,14 @@ class Tour_plan(models.Model):
         verbose_name = "План тура"
         verbose_name_plural = "План туров"
 
+class Tour_image(models.Model):
+    tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name="tour_additional_images", null=True)
+    image = models.ImageField(upload_to="tour_additional_images/")
+ 
 
+    class Meta:
+        verbose_name = "Картинка с тура "
+        verbose_name_plural = "Картинки с тура"
  
 #comments
 class Comment(models.Model):

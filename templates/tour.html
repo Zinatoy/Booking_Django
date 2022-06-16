@@ -50,109 +50,9 @@
                                         </div>
                                     </div>
 
-                                    <div class="tour-sidebar__sorter-single">
-                                        <div class="tour-sidebar__sorter-top">
-                                            <h3>Review Score</h3>
-                                            <button class="tour-sidebar__sorter-toggler"></button>
+                                   
 
-                                        </div>
-                                        <div class="tour-sidebar__sorter-content">
-                                            <div class="tour-sidebar__sorter-inputs">
-                                                <p>
-                                                    <input type="checkbox" id="review-5" name="radio-group">
-                                                    <label for="review-5">
-                                                        <i class="fa fa-star active"></i>
-                                                        <i class="fa fa-star active"></i>
-                                                        <i class="fa fa-star active"></i>
-                                                        <i class="fa fa-star active"></i>
-                                                        <i class="fa fa-star active"></i>
-                                                    </label>
-                                                </p>
-                                                <p>
-                                                    <input type="checkbox" id="review-4" name="radio-group">
-                                                    <label for="review-4">
-                                                        <i class="fa fa-star active"></i>
-                                                        <i class="fa fa-star active"></i>
-                                                        <i class="fa fa-star active"></i>
-                                                        <i class="fa fa-star active"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </label>
-                                                </p>
-                                                <p>
-                                                    <input type="checkbox" id="review-3" name="radio-group">
-                                                    <label for="review-3">
-                                                        <i class="fa fa-star active"></i>
-                                                        <i class="fa fa-star active"></i>
-                                                        <i class="fa fa-star active"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </label>
-                                                </p>
-                                                <p>
-                                                    <input type="checkbox" id="review-2" name="radio-group">
-                                                    <label for="review-2">
-                                                        <i class="fa fa-star active"></i>
-                                                        <i class="fa fa-star active"></i>
-                                                        <i class="fa fa-star "></i>
-                                                        <i class="fa fa-star "></i>
-                                                        <i class="fa fa-star "></i>
-                                                    </label>
-                                                </p>
-                                                <p>
-                                                    <input type="checkbox" id="review-1" name="radio-group">
-                                                    <label for="review-1">
-                                                        <i class="fa fa-star active"></i>
-                                                        <i class="fa fa-star "></i>
-                                                        <i class="fa fa-star "></i>
-                                                        <i class="fa fa-star "></i>
-                                                        <i class="fa fa-star "></i>
-                                                    </label>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="tour-sidebar__sorter-single">
-                                        <div class="tour-sidebar__sorter-top">
-                                            <h3>Categories</h3>
-                                            <button class="tour-sidebar__sorter-toggler"></button>
-
-                                        </div>
-                                        <div class="tour-sidebar__sorter-content">
-
-                                            <div class="tour-sidebar__sorter-inputs">
-                                                <p>
-                                                    <input type="checkbox" id="cat-5" name="radio-group">
-                                                    <label for="cat-5">
-                                                        City Tours
-                                                    </label>
-                                                </p>
-                                                <p>
-                                                    <input type="checkbox" id="cat-4" name="radio-group">
-                                                    <label for="cat-4">HostedTours
-                                                    </label>
-                                                </p>
-                                                <p>
-                                                    <input type="checkbox" id="cat-3" name="radio-group">
-                                                    <label for="cat-3">Adventure Tours
-                                                    </label>
-                                                </p>
-                                                <p>
-                                                    <input type="checkbox" id="cat-2" name="radio-group">
-                                                    <label for="cat-2">Group Tours
-
-                                                    </label>
-                                                </p>
-                                                <p>
-                                                    <input type="checkbox" id="cat-1" name="radio-group">
-                                                    <label for="cat-1">
-                                                        Couple Tours
-                                                    </label>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                   
                                     <div class="tour-sidebar__sorter-single">
                                         <div class="tour-sidebar__sorter-top">
                                             <h3>Duration</h3>
@@ -205,9 +105,10 @@
                         <div class="tours-list__right">
                             <div class="tours-list__inner">
                                 <!--Tours List Single-->
+                                {% for tour in tour %}
                                 <div class="tours-list__single">
                                     <div class="tours-list__img">
-                                        <img src="{% static 'assets/images/resources/tours-list-img-1.jpg' %}" alt="">
+                                        <img src="{{ tour.image.url }}" alt="">
                                         <div class="tours-list__icon">
                                             <a href="tour-details.html">
                                                 <i class="fa fa-heart"></i>
@@ -218,137 +119,20 @@
                                         <div class="tours-list__stars">
                                             <i class="fa fa-star"></i> 8.0 Superb
                                         </div>
-                                        <h3 class="tours-list__title"><a href="tour-details.html">Moscow Red City
-                                                Land</a></h3>
-                                        <p class="tours-list__rate"><span>$870</span> / Per Person</p>
-                                        <p class="tours-list__text">Lorem ipsum available isn but the majority have
-                                            suffered alteratin in some or form injected semper fames.</p>
+                                        <h3 class="tours-list__title"><a href="tour-details.html">{{ tour.name}}</a></h3>
+                                        <p class="tours-list__rate"><span>${{ tour.price }}</span> / Per Person</p>
+                                        <p class="tours-list__text">{{tour.descriptions}}</p>
                                         <ul class="tours-list__meta list-unstyled">
-                                            <li><a href="tour-details.html"><i class="far fa-calendar"></i>3 Days</a>
+                                            <li><a href="tour-details.html"><i class="far fa-calendar"></i>{{ tour.days}}</a>
                                             </li>
-                                            <li><a href="tour-details.html"><i class="far fa-user-circle"></i>12+</a>
+                                            <li><a href="tour-details.html"><i class="far fa-user-circle"></i>{{tour.age}}+</a>
                                             </li>
-                                            <li><a href="tour-details.html"><i class="far fa-map"></i>Los Angeles</a>
+                                            <li><a href="tour-details.html"><i class="far fa-map"></i> {{ tour.country }}</a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
-                                <!--Tours List Single-->
-                                <div class="tours-list__single">
-                                    <div class="tours-list__img">
-                                        <img src="{% static 'assets/images/resources/tours-list-img-2.jpg' %}" alt="">
-                                        <div class="tours-list__icon">
-                                            <a href="tour-details.html">
-                                                <i class="fa fa-heart"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="tours-list__content">
-                                        <div class="tours-list__stars">
-                                            <i class="fa fa-star"></i> 8.0 Superb
-                                        </div>
-                                        <h3 class="tours-list__title"><a href="tour-details.html">Discover Depth of
-                                                Beach</a></h3>
-                                        <p class="tours-list__rate"><span>$870</span> / Per Person</p>
-                                        <p class="tours-list__text">Lorem ipsum available isn but the majority have
-                                            suffered alteratin in some or form injected semper fames.</p>
-                                        <ul class="tours-list__meta list-unstyled">
-                                            <li><a href="tour-details.html"><i class="far fa-calendar"></i>3 Days</a>
-                                            </li>
-                                            <li><a href="tour-details.html"><i class="far fa-user-circle"></i>12+</a>
-                                            </li>
-                                            <li><a href="tour-details.html"><i class="far fa-map"></i>Los Angeles</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!--Tours List Single-->
-                                <div class="tours-list__single">
-                                    <div class="tours-list__img">
-                                        <img src="{% static 'assets/images/resources/tours-list-img-3.jpg' %}" alt="">
-                                        <div class="tours-list__icon">
-                                            <a href="tour-details.html">
-                                                <i class="fa fa-heart"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="tours-list__content">
-                                        <div class="tours-list__stars">
-                                            <i class="fa fa-star"></i> 8.0 Superb
-                                        </div>
-                                        <h3 class="tours-list__title"><a href="tour-details.html">Discover Depth of
-                                                Beach</a></h3>
-                                        <p class="tours-list__rate"><span>$870</span> / Per Person</p>
-                                        <p class="tours-list__text">Lorem ipsum available isn but the majority have
-                                            suffered alteratin in some or form injected semper fames.</p>
-                                        <ul class="tours-list__meta list-unstyled">
-                                            <li><a href="tour-details.html"><i class="far fa-calendar"></i>3 Days</a>
-                                            </li>
-                                            <li><a href="tour-details.html"><i class="far fa-user-circle"></i>12+</a>
-                                            </li>
-                                            <li><a href="tour-details.html"><i class="far fa-map"></i>Los Angeles</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!--Tours List Single-->
-                                <div class="tours-list__single">
-                                    <div class="tours-list__img">
-                                        <img src="{% static 'assets/images/resources/tours-list-img-4.jpg' %}" alt="">
-                                        <div class="tours-list__icon">
-                                            <a href="tour-details.html">
-                                                <i class="fa fa-heart"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="tours-list__content">
-                                        <div class="tours-list__stars">
-                                            <i class="fa fa-star"></i> 8.0 Superb
-                                        </div>
-                                        <h3 class="tours-list__title"><a href="tour-details.html">Moscow Red City
-                                                Land</a></h3>
-                                        <p class="tours-list__rate"><span>$870</span> / Per Person</p>
-                                        <p class="tours-list__text">Lorem ipsum available isn but the majority have
-                                            suffered alteratin in some or form injected semper fames.</p>
-                                        <ul class="tours-list__meta list-unstyled">
-                                            <li><a href="tour-details.html"><i class="far fa-calendar"></i>3 Days</a>
-                                            </li>
-                                            <li><a href="tour-details.html"><i class="far fa-user-circle"></i>12+</a>
-                                            </li>
-                                            <li><a href="tour-details.html"><i class="far fa-map"></i>Los Angeles</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!--Tours List Single-->
-                                <div class="tours-list__single">
-                                    <div class="tours-list__img">
-                                        <img src="{% static 'assets/images/resources/tours-list-img-5.jpg' %}" alt="">
-                                        <div class="tours-list__icon">
-                                            <a href="tour-details.html">
-                                                <i class="fa fa-heart"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="tours-list__content">
-                                        <div class="tours-list__stars">
-                                            <i class="fa fa-star"></i> 8.0 Superb
-                                        </div>
-                                        <h3 class="tours-list__title"><a href="tour-details.html">National Park 2 Days
-                                                Tour</a></h3>
-                                        <p class="tours-list__rate"><span>$870</span> / Per Person</p>
-                                        <p class="tours-list__text">Lorem ipsum available isn but the majority have
-                                            suffered alteratin in some or form injected semper fames.</p>
-                                        <ul class="tours-list__meta list-unstyled">
-                                            <li><a href="tour-details.html"><i class="far fa-calendar"></i>3 Days</a>
-                                            </li>
-                                            <li><a href="tour-details.html"><i class="far fa-user-circle"></i>12+</a>
-                                            </li>
-                                            <li><a href="tour-details.html"><i class="far fa-map"></i>Los Angeles</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                {% endfor %} 
                             </div>
                         </div>
                     </div>

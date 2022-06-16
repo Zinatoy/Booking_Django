@@ -7,7 +7,7 @@ from apps.tours.forms import TourCreateForm, TourUpdateForm, EmailPostForm
 from django.core.mail import send_mail
 # Create your views here.
 
-def tour_plan(request):
+def tour(request):
     home = Settings.objects.latest('id')
     tour = Tour.objects.all()
     category = Category.objects.all()
@@ -22,14 +22,14 @@ def tour_plan(request):
         'tour' : tour,
         'category' : category,
     }
-    return render(request, 'tour_plan.html', context)
+    return render(request, 'tour.html', context)
 
 
-def tour(request,id):
+def tour_plan(request,id):
     home = Settings.objects.latest('id')
     tour= Tour.objects.get(id = id)
     random = Tour.objects.all().order_by('?')[:20]
-    tour_plan = Tour_plan.objects.get(id=id)
+    tour_plan = Tour_plan.objects.get(id = id)
     category = Category.objects.all().order_by('?')[:5]
     
     if 'like' in request.POST:
