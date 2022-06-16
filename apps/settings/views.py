@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from apps.settings.models import Settings,Partners,Team,About 
+from apps.settings.models import Settings,Partners,Team,About,Benefits  
 from apps.destinations.models import Country
 from apps.tours.models import Tour,Tour_image
 
@@ -12,7 +12,8 @@ def index(request):
     about = About.objects.all() 
     country = Country.objects.all() 
     tour = Tour.objects.all()
-    tour_image = Tour_image.objects
+    timage = Tour_image.objects.all()
+    benefits = Benefits.objacts.all()
     context = {
         'home' : home,
         'partners' : partners,
@@ -20,6 +21,8 @@ def index(request):
         'about' : about, 
         'country' : country, 
         'tour' : tour,
+        'timage' : timage,
+        'benefits' : benefits
 
     }
 

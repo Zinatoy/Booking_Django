@@ -592,51 +592,17 @@
             <img src="{% static 'assets/images/shapes/gallery-map.png' %}" class="gallery-one-bg"alt="">
             <div class="gallery-one__container-box clearfix">
                 <ul class="list-unstyled gallery-one__content clearfix">
+                    {% for images in timage %}
                     <li class="wow fadeInUp" data-wow-delay="100ms">
                         <div class="gallery-one__img-box">
-                        <img src="{% static 'assets/images/gallery/gallery-one-img-1.jpg' %}" alt="">
+                         <img src="{{  images.tour_image.url }}" alt="">
                             <div class="gallery-one__iocn">
-                            <a class="img-popup" href="{% static 'assets/images/gallery/gallery-one-img-1.jpg' %}"><i
+                            <a class="img-popup" href="{{home.instagram}}"><i
                                         class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </li>
-                    <li class="wow fadeInUp" data-wow-delay="200ms">
-                        <div class="gallery-one__img-box">
-                            <img src="{% static 'assets/images/gallery/gallery-one-img-2.jpg' %}" alt="">
-                            <div class="gallery-one__iocn">
-                                <a class="img-popup" href="{% static 'assets/images/gallery/gallery-one-img-2.jpg' %}"><i
-                                        class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="wow fadeInUp" data-wow-delay="300ms">
-                        <div class="gallery-one__img-box">
-                            <img src="{% static 'assets/images/gallery/gallery-one-img-3.jpg' %}" alt="">
-                            <div class="gallery-one__iocn">
-                                <a class="img-popup" href="{% static 'assets/images/gallery/gallery-one-img-3.jpg' %}"><i
-                                        class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="wow fadeInUp" data-wow-delay="400ms">
-                        <div class="gallery-one__img-box">
-                            <img src="{% static 'assets/images/gallery/gallery-one-img-4.jpg' %}" alt="">
-                            <div class="gallery-one__iocn">
-                                <a class="img-popup" href="{% static 'assets/images/gallery/gallery-one-img-4.jpg' %}"><i
-                                        class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="wow fadeInUp" data-wow-delay="500ms">
-                        <div class="gallery-one__img-box">
-                            <img src="{% static 'assets/images/gallery/gallery-one-img-5.jpg' %}" alt="">
-                            <div class="gallery-one__iocn">
-                                <a class="img-popup" href="{% static 'assets/images/gallery/gallery-one-img-5.jpg' %}"><i
-                                        class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </li>
+                    {% endfor %}
                 </ul>
             </div>
         </section>
