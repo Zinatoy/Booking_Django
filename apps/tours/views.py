@@ -5,12 +5,14 @@ from apps.categories.models import Category
 from django.db.models import Q
 from apps.tours.forms import TourCreateForm, TourUpdateForm, EmailPostForm
 from django.core.mail import send_mail
+from django.views.generic import ListView
 # Create your views here.
 
 def tour(request):
     home = Settings.objects.latest('id')
     tour = Tour.objects.all()
     category = Category.objects.all()
+    plan = Tour_plan.objects.all()
 
     if 'comment' in request.POST:
         id = request.POST.get('post_id')
@@ -21,15 +23,16 @@ def tour(request):
         'home': home,
         'tour' : tour,
         'category' : category,
+        'plan' : plan ,
     }
     return render(request, 'tour.html', context)
 
 
 def tour_plan(request,id):
     home = Settings.objects.latest('id')
-    tour= Tour.objects.get(id = id)
+    tour= Tour.objects.all()
     random = Tour.objects.all().order_by('?')[:20]
-    tour_plan = Tour_plan.objects.get(id = id)
+    tour_plan = Tour_plan.objects.all()
     category = Category.objects.all().order_by('?')[:5]
     
     if 'like' in request.POST:
@@ -54,17 +57,26 @@ def tour_plan(request,id):
     return render(request, 'tour_plan.html', context)
  
  
-def search(request):
-    tours = Tour.objects.all()
-    qury_obj = request.GET.get('key')
-    home = Settings.objects.latest('id')
-    if qury_obj:
-        tours = Tour.objects.filter(Q(title__icontains = qury_obj))
-    context = {
-        'home' : home, 
-        'tours' : tours
-    }
-    return render(request, 'tour/search.html', context)
+class Search(ListView):
+     
+    paginate_by = 3
+
+    def get_queryset(self):
+        return Tour.objects.filter(title__icontains=self.request.GET.get("q"))
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context["q"] = f'q={self.request.GET.get("q")}&'
+        return context
+
+
+class TourCountry: 
+
+    def get_tour(self):
+        return Tour.objects.all()
+
+    def get_country(self):
+        return Country.objects.filter(draft=False).values("title")
 
 def tour_create(request):
     form = TourCreateForm(request.POST or None)

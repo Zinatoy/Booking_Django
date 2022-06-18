@@ -17,14 +17,14 @@
                     <div class="col-xl-6"> 
                         <div class="about-page__right">
                             <div class="section-title text-left">
-                                <span class="section-title__tagline">Learn about us</span>
+                                <span class="section-title__tagline">Узнайте о нас</span>
                                 <h2 class="section-title__title">{{ about.title}}</h2>
                             </div>
-                            <p class="about-page__text-1">A Simply Perfect Place to Get Lost</p>
+                            <p class="about-page__text-1">Просто идеальное место, чтобы заблудиться</p>
                             <p class="about-page__text-2">{{ about.description }}</p>
                             <div class="about-page__progress">
                                 <div class="about-page__progress-single">
-                                    <h4 class="about-page__progress-title">Best Services</h4>
+                                    <h4 class="about-page__progress-title">Лучшие услуги</h4>
                                     <div class="bar">
                                         <div class="bar-inner count-bar" data-percent="77%">
                                             <div class="count-text">77%</div>
@@ -32,7 +32,7 @@
                                     </div>
                                 </div>
                                 <div class="about-page__progress-single">
-                                    <h4 class="about-page__progress-title">Tour Agents</h4>
+                                    <h4 class="about-page__progress-title">Тур агенты</h4>
                                     <div class="bar marb-0">
                                         <div class="bar-inner count-bar" data-percent="38%">
                                             <div class="count-text">38%</div>
@@ -56,11 +56,11 @@
                     <div class="col-xl-12">
                         <div class="book-now__inner">
                             <div class="book-now__left">
-                                <p>Plan your trip with us</p>
-                                <h2>Ready for an unforgetable tour?</h2>
+                                <p>Планируйте свою поездку вместе с нами</p>
+                                <h2>Готовы к незабываемому туру?</h2>
                             </div>
                             <div class="book-now__right">
-                                <a href="#" class="thm-btn book-now__btn">Book tour now</a>
+                                <a href="#" class="thm-btn book-now__btn">Забронировать</a>
                             </div>
                         </div>
                     </div>
@@ -295,9 +295,9 @@
                                     </div>
                                 </a>
                             </div>
-                            <p class="video-one__tagline">Are you ready to travel?</p>
+                            <!-- <p class="video-one__tagline"></p>
                             <h2 class="video-one__title">Tevily is a World Leading <br> Online Tour Booking Platform
-                            </h2>
+                            </h2> -->
                         </div>
                     </div>
                 </div>
@@ -332,7 +332,7 @@
 
         <!--Team One Start-->
         <section class="team-one">
-            <!-- <div class="team-one-map" style="background-image: url(assets/images/shapes/team-one-map.png)"></div> -->
+            <div class="team-one-map" style="background-image: url(assets/images/shapes/team-one-map.png)"></div>
             <img src="{% static 'assets/images/shapes/team-one-map.png' %}" class="team-one-map"  alt="">
             <div class="container">
                 <div class="section-title text-center">
@@ -340,11 +340,11 @@
                     <h2 class="section-title__title">Meet the Team</h2>
                 </div>
                 <div class="row">
-                    {% for team in team %}
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInLeft" data-wow-delay="0ms"
-                        data-wow-duration="1000ms">
-                        <!--Team One Single-->
-                        <div class="team-one__single">
+                    data-wow-duration="1000ms">
+                    <!--Team One Single-->
+                    <div class="team-one__single">
+                            {% for team in team %}
                             <div class="team-one__img">
                                 <img src="{{ team.image.url }}" alt="">
                             </div>
@@ -357,9 +357,9 @@
                                     <a href="{{ team.instagram }}"><i class="fab fa-instagram"></i></a>
                                 </div>
                             </div>
-                        </div>
+                            {% endfor %}   
+                            </div>
                     </div>
-                    {% endfor %}   
                 </div>
             </div>
         </section>

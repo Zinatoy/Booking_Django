@@ -32,8 +32,8 @@
                             <div class="swiper-slide-inner">
                                 <div class="row">
                                     <div class="col-xl-12">
-                                        <h2> Travel & Adventures</h2>
-                                        <p>Where Would You Like To Go?</p>
+                                        <h2> Путешествия & приключения</h2>
+                                        <p>Куда бы вы хотели пойти?</p>
                                     </div>
                                 </div>
                             </div>
@@ -48,8 +48,8 @@
                             <div class="swiper-slide-inner">
                                 <div class="row">
                                     <div class="col-xl-12">
-                                        <h2> Travel & Adventures</h2>
-                                        <p>Where Would You Like To Go?</p>
+                                        <h2> Путешествия & приключения</h2>
+                                        <p>Куда бы вы хотели пойти?</p>
                                     </div>
                                 </div>
                             </div>
@@ -64,8 +64,8 @@
                             <div class="swiper-slide-inner">
                                 <div class="row">
                                     <div class="col-xl-12">
-                                        <h2> Travel & Adventures</h2>
-                                        <p>Where Would You Like To Go?</p>
+                                        <h2> Путешествия & приключения</h2>
+                                        <p>Куда бы вы хотели пойти?</p>
                                     </div>
                                 </div>
                             </div>
@@ -106,9 +106,34 @@
                                             </select>
                                         </div>
                                     </div> -->
-                                    <div class="tour-search-one__btn-wrap">
-                                        <button type="submit" class="thm-btn tour-search-one__btn">Find now</button>
-                                    </div>
+                                    <form action="{% url 'tour' %}" method="get" name="filter">
+                                        <div class="left-side my-4">
+                                            <h3 class="sear-head editContent"></h3>
+                                            <ul class="w3layouts-box-list">
+                                                {% for tour in view.get_tour %}
+                                                    <li class="editContent">
+                                                        <input type="checkbox" class="checked" name="genre" value="{{ tour.id }}">
+                                                        <span class="span editContent">{{ tour.name }}</span>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                        <!-- // preference -->
+                                        <!-- discounts -->
+                                    
+                                        <div class="left-side">
+                                            <h3 class="sear-head editContent">Введите слово</h3>
+                                            <ul class="w3layouts-box-list">
+                                                {% for country in view.get_country %}
+                                                    <li class="editContent">
+                                                        <input type="checkbox" class="checked" name="year" value="{{ country.title }}">
+                                                        <span class="span editContent">{{ country.title }}</span>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                        <button type="submit">Найти</button>
+                                    </form>
                                 </div>
                             </form>
                         </div>
@@ -117,20 +142,35 @@
             </div>
         </section>
         <!--Tour Search End-->
-  
+        <section class="news-one">
+            <div class="container">
+                <div class="news-one__top">
+                    <div class="row">
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="news-one__top-left">
+                                <div class="section-title text-left">
+                                    <span class="section-title__tagline"></span>
+                                    <!-- <h2 class="section-title__title">News & Articles</h2> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!--Destinations One Start-->
         <section class="destinations-one">
             <div class="container">
                 <div class="section-title text-center">
-                    <span class="section-title__tagline">Destination lists</span>
-                    <h2 class="section-title__title">Go Exotic Places</h2>
+                    <span class="section-title__tagline">Список пунктов назначения</span>
+                    <h2 class="section-title__title">Посетите экзотические места</h2>
                 </div>
                 <div class="row masonary-layout">
                     {% for country in country %}
                     <div class="col-xl-3 col-lg-3">
                         <div class="destinations-one__single">
                             <div class="destinations-one__img">
-                                <img src="{{ country.image.url }}" alt="">
+                                <img src="{{ country.image.url }}" width="200" height="250" alt="">
                                 <div class="destinations-one__content">
                                     <h2 class="destinations-one__title"><a href="{% url 'country_details' %}">{{ country.title }}</a>
                                     </h2>
@@ -160,33 +200,18 @@
                         <div class="about-one__left">
                             <div class="about-one__img-box">
                                 <div class="about-one__img">
-                                    <img src="{% static 'assets/images/resources/about-one-img-1.png" alt' %}="">
-                                </div>
-                                <div class="about-one__call">
-                                    <div class="about-one__call-icon">
-                                        <span class="icon-phone-call"></span>
-                                    </div>
-                                    <div class="about-one__call-number">
-                                        <p>Book Tour Now</p>
-                                        <h4><a href="tel:666-888-0000">666 888 0000</a></h4>
-                                    </div>
-                                </div>
-                                <div class="about-one__discount">
-                                    <h2>30%</h2>
-                                    <h3>Discount</h3>
-                                </div>
+                                    <img src="{% static 'assets/images/resources/about-one-img-1.png' %}" alt ="">
+                                </div> 
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-6">
                         <div class="about-one__right">
                             <div class="section-title text-left">
-                                <span class="section-title__tagline">Get to know us</span>
-                                <h2 class="section-title__title">Plan Your Trip with Trevily</h2>
+                                <span class="section-title__tagline">Познакомьтесь с нами</span>
+                                <h4 class="section-title__title">Спланируйте свое путешествие с {{ home.title }}</h4>
                             </div>
-                            <p class="about-one__right-text">There are many variations of passages of available but the
-                                majority have suffered alteration in some form, by injected hum randomised words which
-                                don't look even slightly.</p>
+                            <p class="about-one__right-text">{{home.description}}</p>
                             <ul class="list-unstyled about-one__points">
                                 {% for benefit in benefits %}
                                 <li>
@@ -199,7 +224,7 @@
                                 </li> 
                                 {% endfor %}
                             </ul>
-                            <a href="#" class="about-one__btn thm-btn">Book with us now</a>
+                            <a href="#" class="about-one__btn thm-btn">Забронируйте у нас сейчас</a>
                         </div>
                     </div>
                 </div>
@@ -211,8 +236,8 @@
         <section class="popular-tours">
             <div class="popular-tours__container">
                 <div class="section-title text-center">
-                    <span class="section-title__tagline">Featured tours</span>
-                    <h2 class="section-title__title">Most Popular Tours</h2>
+                    <span class="section-title__tagline">Рекомендуемые туры</span>
+                    <h2 class="section-title__title">Самые популярные туры</h2>
                 </div>
                 <div class="row">
                     <div class="col-xl-12">
@@ -265,8 +290,8 @@
                                     </div>
                                 </a>
                             </div>
-                            <p class="video-one__tagline">Are you ready to travel?</p>
-                            <h2 class="video-one__title">Tevily is a World Leading Online Tour Booking Platform</h2>
+                            <p class="video-one__tagline">Вы готовы путешествовать?</p>
+                            <h2 class="video-one__title">{{home.title}} — ведущая мировая платформа онлайн-бронирования туров</h2>
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6">
@@ -312,7 +337,7 @@
                 <div class="row">
                     <div class="col-xl-3">
                         <div class="brand-one__title">
-                            <h2>Our partners</h2>
+                            <h2>Наши партнеры</h2>
                         </div>
                     </div>
                     <div class="col-xl-9">
@@ -346,7 +371,7 @@
                     <div class="swiper-wrapper">
                                     {% for partner in partners %}
                                     <div class="swiper-slide">
-                                        <img href="{{ link_partner.url }}" src="{{ partner.image.url }}" width="150" alt="">
+                                        <img href="{{ link_partner.url }}" src="{{ partner.image.url }}" width="300" height="150" alt="">
                                     </div><!-- /.swiper-slide --> 
                                     {% endfor %}
                                 </div>
@@ -368,8 +393,8 @@
             </div>
             <div class="container">
                 <div class="section-title text-center">
-                    <span class="section-title__tagline">Testimonials & reviews</span>
-                    <h2 class="section-title__title">What They’re Saying</h2>
+                    <span class="section-title__tagline">Отзывы и обзоры</span>
+                    <h2 class="section-title__title">То, что они говорят</h2>
                 </div>
                 <div class="row">
                     <div class="col-xl-12">
@@ -581,7 +606,7 @@
                     {% for images in timage %}
                     <li class="wow fadeInUp" data-wow-delay="100ms">
                         <div class="gallery-one__img-box">
-                         <img src="{{  images.tour_image.url }}" alt="">
+                         <img src="{{  images.tour_image.url }}" width = "160" height="220" alt="">
                             <div class="gallery-one__iocn">
                             <a class="img-popup" href="{{home.instagram}}"><i
                                         class="fab fa-instagram"></i></a>
@@ -594,6 +619,22 @@
         </section>
         <!--Gallery Oned End-->
 
+
+             <div class="container">
+                <div class="news-one__top">
+                    <div class="row">
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="news-one__top-left">
+                                <div class="section-title text-left">
+                                    <span class="section-title__tagline"></span>
+                                    <!-- <h2 class="section-title__title">News & Articles</h2> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
         <!--Why Choose Start-->
         <section class="why-choose">
             <div class="why-choose__container">
@@ -602,7 +643,7 @@
                         style="background-image: url(assets/images/backgrounds/why-choose-left-bg.jpg)"></div> -->
                         <img src="{% static 'assets/images/backgrounds/why-choose-left-bg.jpg' %}"class="why-choose__left-bg" alt="">
                     <div class="why-choose__toggle">
-                        <p>Trips <br> & tours</p>
+                        <p>Путешествия <br> & Туры</p>
                     </div>
                 </div>
                 <div class="why-choose__right">
@@ -611,12 +652,10 @@
                         <img src="{% static 'assets/images/shapes/why-choose-right-map.png' %}" class="why-choose__right-map" alt="">
                     <div class="why-choose__right-content">
                         <div class="section-title text-left">
-                            <span class="section-title__tagline">Our benefit lists</span>
-                            <h2 class="section-title__title">Why Choose Tevily</h2>
+                            <span class="section-title__tagline">Наши список преимуществ</span>
+                            <h1 class="section-title__title">Почему именно {{home.title}}</h1>
                         </div>
-                        <p class="why-choose__right-text">There are many variations of passages of Lorem Ipsum is simply
-                            free text available in the market for you, but the majority have suffered alteration in some
-                            form.</p>
+                        <!-- <p class="why-choose__right-text">{{home.description}}</p> -->
                         <ul class="list-unstyled why-choose__list">
                             {% for benefit in benefits %}
                             <li>
@@ -644,7 +683,7 @@
                         <div class="col-xl-9 col-lg-9">
                             <div class="news-one__top-left">
                                 <div class="section-title text-left">
-                                    <span class="section-title__tagline">From the blog post</span>
+                                    <span class="section-title__tagline"></span>
                                     <!-- <h2 class="section-title__title">News & Articles</h2> -->
                                 </div>
                             </div>
@@ -706,19 +745,19 @@
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <i class="fa fa-envelope"></i>
-                    <a href="mailto:needhelp@packageName__.com">needhelp@tevily.com</a>
+                    <a href="mailto:needhelp@packageName__.com">{{home.email}}</a>
                 </li>
                 <li>
                     <i class="fa fa-phone-alt"></i>
-                    <a href="tel:666-888-0000">666 888 0000</a>
+                    <a href="tel:666-888-0000">{{home.phone}}</a>
                 </li>
             </ul><!-- /.mobile-nav__contact -->
             <div class="mobile-nav__top">
                 <div class="mobile-nav__social">
-                    <a href="#" class="fab fa-twitter"></a>
-                    <a href="#" class="fab fa-facebook-square"></a>
-                    <a href="#" class="fab fa-pinterest-p"></a>
-                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="{{home.twitter}}" class="fab fa-twitter"></a>
+                    <a href="{{home.facebook}}" class="fab fa-facebook-square"></a>
+                    <a href="{{home.twitter}}" class="fab fa-pinterest-p"></a>
+                    <a href="{{home.instagram}}" class="fab fa-instagram"></a>
                 </div><!-- /.mobile-nav__social -->
             </div><!-- /.mobile-nav__top -->
 
@@ -734,7 +773,7 @@
         <!-- /.search-popup__overlay -->
         <div class="search-popup__content">
             <form action="#">
-                <label for="search" class="sr-only">search her</label><!-- /.sr-only -->
+                <label for="search" class="sr-only">Поиск</label><!-- /.sr-only -->
                 <input type="text" id="search" placeholder="Search Here..." />
                 <button type="submit" aria-label="search submit" class="thm-btn">
                     <i class="icon-magnifying-glass"></i>

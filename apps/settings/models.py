@@ -12,6 +12,7 @@ class Settings(models.Model):
     facebook = models.CharField(max_length=255)
     twitter = models.CharField(max_length=255)
     instagram = models.CharField(max_length=255)
+    address = models.CharField(max_length=300)
 
     def __str__(self):
         return self.title 

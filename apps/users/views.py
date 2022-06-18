@@ -9,7 +9,7 @@ from apps.users.models import User
 def register(request):
  
     if request.user.is_authenticated:
-        return redirect('/tours')
+        return redirect('/register')
      
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
@@ -20,7 +20,7 @@ def register(request):
             password = form.cleaned_data['password1']
             user = authenticate(username = username,password = password)
             login(request, user)
-            return redirect('/tours')
+            return redirect('/register')
          
         else:
             return render(request,'account/register.html',{'form':form})

@@ -76,11 +76,12 @@
             <div class="tour-details__top">
                 <div class="container">
                     <div class="row">
+                        {% for tour in tour %}
                         <div class="col-xl-12">
                             <div class="tour-details__top-inner">
                                 <div class="tour-details__top-left">
-                                    <h2 class="tour-details__top-title">National Park 2 Days Tour</h2>
-                                    <p class="tour-details__top-rate"><span>$870</span> / Per Person</p>
+                                    <h2 class="tour-details__top-title">{{ tour.name}}</h2>
+                                    <p class="tour-details__top-rate"><span>${{ tour.price }}</span> / на человека</p>
                                 </div>
                                 <div class="tour-details__top-right">
                                     <ul class="list-unstyled tour-details__top-list">
@@ -89,8 +90,8 @@
                                                 <span class="icon-clock"></span>
                                             </div>
                                             <div class="text">
-                                                <p>Duration</p>
-                                                <h6>3 Days</h6>
+                                                <p>Длительность</p>
+                                                <h6>{{ tour.days}}</h6>
                                             </div>
                                         </li>
                                         <li>
@@ -98,11 +99,11 @@
                                                 <span class="icon-user"></span>
                                             </div>
                                             <div class="text">
-                                                <p>Min Age</p>
-                                                <h6>12 +</h6>
+                                                <p>Возраст</p>
+                                                <h6>{{ tour.age }} +</h6>
                                             </div>
                                         </li>
-                                        <li>
+                                        <!-- <li>
                                             <div class="icon">
                                                 <span class="icon-plane"></span>
                                             </div>
@@ -111,19 +112,20 @@
                                                 <h6>Adventure, Fun</h6>
                                             </div>
                                         </li>
-                                        <li>
+                                        <li> -->
                                             <div class="icon">
                                                 <span class="icon-place"></span>
                                             </div>
                                             <div class="text">
-                                                <p>Location</p>
-                                                <h6>Los Angeles</h6>
+                                                <p>Местоположение</p>
+                                                <h6>{{ tour.country }}</h6>
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -173,17 +175,12 @@
                 <div class="row">
                     <div class="col-xl-8 col-lg-7">
                         <div class="tour-details-two__left">
+                            {% for tour in tour %}
                             <div class="tour-details-two__overview">
-                                <h3 class="tour-details-two__title">Overview</h3>
-                                <p class="tour-details-two__overview-text">Lorem ipsum available isn but the majority
-                                    have suffered alteratin in some or form injected simply free text used by copytyping
-                                    refreshing. Neque porro est qui dolorem ipsum quia quaed inventore veritatis et
-                                    quasi architecto beatae vitae dicta sunt explicabo. Lorem ipsum is simply free text
-                                    used by copytyping refreshing. Neque porro est qui dolorem ipsum quia quaed
-                                    inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Aelltes
-                                    port lacus quis enim var sed efficitur turpis gilla sed sit amet finibus eros.</p>
+                                <h3 class="tour-details-two__title">Oбзор</h3>
+                                <p class="tour-details-two__overview-text">{{tour.description}}</p>
                                 <div class="tour-details-two__overview-bottom">
-                                    <h3 class="tour-details-two-overview__title">Included/Exclude</h3>
+                                    <h3 class="tour-details-two-overview__title">Включено/исключено</h3>
                                     <div class="tour-details-two__overview-bottom-inner">
                                         <div class="tour-details-two__overview-bottom-left">
                                             <ul class="list-unstyled tour-details-two__overview-bottom-list">
@@ -192,7 +189,14 @@
                                                         <i class="fa fa-check"></i>
                                                     </div>
                                                     <div class="text">
-                                                        <p>Pick and Drop Services</p>
+                                                        <p>Услуги самовывоза</p>                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="icon">
+                                                        <i class="fa fa-check"></i>
+                                                    </div>
+                                                    <div class="text">
+                                                        <p>1 прием пищи в день</p>
                                                     </div>
                                                 </li>
                                                 <li>
@@ -200,7 +204,7 @@
                                                         <i class="fa fa-check"></i>
                                                     </div>
                                                     <div class="text">
-                                                        <p>1 Meal Per Day</p>
+                                                        <p>Круизный ужин и музыкальное мероприятие</p>
                                                     </div>
                                                 </li>
                                                 <li>
@@ -208,15 +212,7 @@
                                                         <i class="fa fa-check"></i>
                                                     </div>
                                                     <div class="text">
-                                                        <p>Cruise Dinner & Music Event</p>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="icon">
-                                                        <i class="fa fa-check"></i>
-                                                    </div>
-                                                    <div class="text">
-                                                        <p>Visit 7 Best Places in the City With Group</p>
+                                                        <p>Посетите 7 лучших мест в городе с группой</p>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -228,7 +224,7 @@
                                                         <i class="fa fa-times"></i>
                                                     </div>
                                                     <div class="text">
-                                                        <p>Additional Services</p>
+                                                        <p>Дополнительные услуги</p>
                                                     </div>
                                                 </li>
                                                 <li>
@@ -236,7 +232,7 @@
                                                         <i class="fa fa-times"></i>
                                                     </div>
                                                     <div class="text">
-                                                        <p>Insurance</p>
+                                                        <p>Застраховка</p>
                                                     </div>
                                                 </li>
                                                 <li>
@@ -244,7 +240,7 @@
                                                         <i class="fa fa-times"></i>
                                                     </div>
                                                     <div class="text">
-                                                        <p>Food & Drinks</p>
+                                                        <p>Еда & Напитки</p>
                                                     </div>
                                                 </li>
                                                 <li>
@@ -252,7 +248,7 @@
                                                         <i class="fa fa-times"></i>
                                                     </div>
                                                     <div class="text">
-                                                        <p>Tickets</p>
+                                                        <p>Билеты</p>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -260,199 +256,35 @@
                                     </div>
                                 </div>
                             </div>
+                            {% endfor %}
                             <div class="tour-details-two__tour-plan">
-                                <h3 class="tour-details-two__title">Tour Plan</h3>
+                                <h3 class="tour-details-two__title">План тура</h3>
                                 <div class="accrodion-grp" data-grp-name="faq-one-accrodion">
+                                    {% for tour_plan in tour_plan %}
                                     <div class="accrodion active">
                                         <div class="accrodion-title">
-                                            <h4><span>Day 1</span> Arrive South Africa Forest</h4>
+                                            <h4>{{ tour_plan.which_day }}</h4>
                                         </div>
                                         <div class="accrodion-content">
                                             <div class="inner">
-                                                <p>There are many variations of passages of available but majority have
-                                                    alteration in some by inject humour or random words. Lorem ipsum
-                                                    dolor sit amet, error insolens reprimique no quo, ea pri verterem
-                                                    phaedr vel ea iisque aliquam.</p>
+                                                <p>{{tour_plan.description}}</p>
                                                 <ul class="list-unstyled">
-                                                    <li>Free Drinks</li>
-                                                    <li>Awesome Breakfast</li>
-                                                    <li>5 Star Accommodation</li>
+                                                    <li>Бесплатные напитки</li>
+                                                    <li>Потрясающий завтрак</li>
+                                                    <li> 5-звездочное размещение</li>
                                                 </ul>
                                             </div><!-- /.inner -->
                                         </div>
                                     </div>
-                                    <div class="accrodion">
-                                        <div class="accrodion-title">
-                                            <h4><span>Day 2</span> Lunch Inside of Forest & Adventure</h4>
-                                        </div>
-                                        <div class="accrodion-content">
-                                            <div class="inner">
-                                                <p>There are many variations of passages of available but majority have
-                                                    alteration in some by inject humour or random words. Lorem ipsum
-                                                    dolor sit amet, error insolens reprimique no quo, ea pri verterem
-                                                    phaedr vel ea iisque aliquam.</p>
-                                                <ul class="list-unstyled">
-                                                    <li>Free Drinks</li>
-                                                    <li>Awesome Breakfast</li>
-                                                    <li>5 Star Accommodation</li>
-                                                </ul>
-                                            </div><!-- /.inner -->
-                                        </div>
-                                    </div>
-                                    <div class="accrodion last-chiled">
-                                        <div class="accrodion-title">
-                                            <h4><span>Day 3</span> Depart from South Africa</h4>
-                                        </div>
-                                        <div class="accrodion-content">
-                                            <div class="inner">
-                                                <p>There are many variations of passages of available but majority have
-                                                    alteration in some by inject humour or random words. Lorem ipsum
-                                                    dolor sit amet, error insolens reprimique no quo, ea pri verterem
-                                                    phaedr vel ea iisque aliquam.</p>
-                                                <ul class="list-unstyled">
-                                                    <li>Free Drinks</li>
-                                                    <li>Awesome Breakfast</li>
-                                                    <li>5 Star Accommodation</li>
-                                                </ul>
-                                            </div><!-- /.inner -->
-                                        </div>
-                                    </div>
+                                    {% endfor %} 
                                 </div>
                             </div>
                             <div class="tour-details-two__location">
-                                <h3 class="tour-details-two__title">Tour Plan</h3>
+                                <h3 class="tour-details-two__title">Тур-план</h3>
                                 <iframe
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4562.753041141002!2d-118.80123790098536!3d34.152323469614075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e82469c2162619%3A0xba03efb7998eef6d!2sCostco+Wholesale!5e0!3m2!1sbn!2sbd!4v1562518641290!5m2!1sbn!2sbd"
                                     class="tour-details-two__location-map" allowfullscreen></iframe>
-                            </div>
-                            <div class="tour-details-two__related-tours">
-                                <h3 class="tour-details-two__title">Tour Plan</h3>
-                                <div class="row">
-                                    <div class="col-xl-6">
-                                        <!--Popular Tours Two Single-->
-                                        <div class="popular-tours__single">
-                                            <div class="popular-tours__img">
-                                                <img src="{% static 'assets/images/resources/popular-tours-two__img-1.jpg' %}" alt="">
-                                                <div class="popular-tours__icon">
-                                                    <a href="tour-details.html">
-                                                        <i class="fa fa-heart"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="popular-tours__content">
-                                                <div class="popular-tours__stars">
-                                                    <i class="fa fa-star"></i> 8.0 Superb
-                                                </div>
-                                                <h3 class="popular-tours__title"><a href="tour-details.html">National
-                                                        Park 2 Days Tour</a></h3>
-                                                <p class="popular-tours__rate"><span>$1870</span> / Per Person</p>
-                                                <ul class="popular-tours__meta list-unstyled">
-                                                    <li><a href="tour-details.html">3 Days</a></li>
-                                                    <li><a href="tour-details.html">12+</a></li>
-                                                    <li><a href="tour-details.html">Los Angeles</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <!--Popular Tours Two Single-->
-                                        <div class="popular-tours__single">
-                                            <div class="popular-tours__img">
-                                                <img src="{% static 'assets/images/resources/popular-tours-two__img-5.jpg' %}" alt="">
-                                                <div class="popular-tours__icon">
-                                                    <a href="tour-details.html">
-                                                        <i class="fa fa-heart"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="popular-tours__content">
-                                                <div class="popular-tours__stars">
-                                                    <i class="fa fa-star"></i> 8.0 Superb
-                                                </div>
-                                                <h3 class="popular-tours__title"><a href="tour-details.html">National
-                                                        Park 2 Days Tour</a></h3>
-                                                <p class="popular-tours__rate"><span>$1870</span> / Per Person</p>
-                                                <ul class="popular-tours__meta list-unstyled">
-                                                    <li><a href="tour-details.html">3 Days</a></li>
-                                                    <li><a href="tour-details.html">12+</a></li>
-                                                    <li><a href="tour-details.html">Los Angeles</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <h3 class="tour-details-two__title review-scores__title">Review Scores</h3>
-                            <div class="tour-details__review-score">
-                                <div class="tour-details__review-score-ave">
-                                    <div class="my-auto">
-                                        <h3>7.0</h3>
-                                        <p><i class="fa fa-star"></i> Super</p>
-                                    </div>
-                                </div>
-                                <div class="tour-details__review-score__content">
-                                    <!--Tour Details Review Score Bar-->
-                                    <div class="tour-details__review-score__bar">
-                                        <div class="tour-details__review-score__bar-top">
-                                            <h3>Services</h3>
-                                            <p>50%</p>
-
-                                        </div>
-                                        <div class="tour-details__review-score__bar-line">
-                                            <span class="wow slideInLeft" data-wow-duration="1500ms"
-                                                style="width: 50%;"></span>
-                                        </div>
-                                    </div>
-                                    <!--Tour Details Review Score Bar-->
-                                    <div class="tour-details__review-score__bar">
-                                        <div class="tour-details__review-score__bar-top">
-                                            <h3>Locations</h3>
-                                            <p>87%</p>
-
-                                        </div>
-                                        <div class="tour-details__review-score__bar-line">
-                                            <span class="wow slideInLeft" data-wow-duration="1500ms"
-                                                style="width: 87%;"></span>
-                                        </div>
-                                    </div>
-                                    <!--Tour Details Review Score Bar-->
-                                    <div class="tour-details__review-score__bar">
-                                        <div class="tour-details__review-score__bar-top">
-                                            <h3>Amenities</h3>
-                                            <p>77%</p>
-
-                                        </div>
-                                        <div class="tour-details__review-score__bar-line">
-                                            <span class="wow slideInLeft" data-wow-duration="1500ms"
-                                                style="width: 77%;"></span>
-                                        </div>
-                                    </div>
-                                    <!--Tour Details Review Score Bar-->
-                                    <div class="tour-details__review-score__bar">
-                                        <div class="tour-details__review-score__bar-top">
-                                            <h3>Prices</h3>
-                                            <p>69%</p>
-
-                                        </div>
-                                        <div class="tour-details__review-score__bar-line">
-                                            <span class="wow slideInLeft" data-wow-duration="1500ms"
-                                                style="width: 69%;"></span>
-                                        </div>
-                                    </div>
-                                    <!--Tour Details Review Score Bar-->
-                                    <div class="tour-details__review-score__bar">
-                                        <div class="tour-details__review-score__bar-top">
-                                            <h3>Food</h3>
-                                            <p>40%</p>
-
-                                        </div>
-                                        <div class="tour-details__review-score__bar-line">
-                                            <span class="wow slideInLeft" data-wow-duration="1500ms"
-                                                style="width: 40%;"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </div>  
                             <div class="tour-details__review-comment">
                                 <div class="tour-details__review-comment-single">
                                     <div class="tour-details__review-comment-top">
@@ -473,23 +305,23 @@
                                     <div class="tour-details__review-form-stars">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <p><span>Services</span> <i class="fa fa-star active"></i><i
+                                                <p><span>Услуги</span> <i class="fa fa-star active"></i><i
                                                         class="fa fa-star active"></i><i class="fa fa-star "></i><i
                                                         class="fa fa-star "></i><i class="fa fa-star "></i></p>
-                                                <p><span>Locations</span> <i class="fa fa-star active"></i><i
-                                                        class="fa fa-star active"></i><i class="fa fa-star "></i><i
-                                                        class="fa fa-star "></i><i class="fa fa-star "></i></p>
-                                            </div><!-- /.col-md-4 -->
-                                            <div class="col-md-4">
-                                                <p><span>Amenities</span> <i class="fa fa-star active"></i><i
-                                                        class="fa fa-star active"></i><i class="fa fa-star "></i><i
-                                                        class="fa fa-star "></i><i class="fa fa-star "></i></p>
-                                                <p><span>Prices</span> <i class="fa fa-star active"></i><i
+                                                <p><span>Местоположение</span> <i class="fa fa-star active"></i><i
                                                         class="fa fa-star active"></i><i class="fa fa-star "></i><i
                                                         class="fa fa-star "></i><i class="fa fa-star "></i></p>
                                             </div><!-- /.col-md-4 -->
                                             <div class="col-md-4">
-                                                <p><span>Food</span> <i class="fa fa-star active"></i><i
+                                                <p><span>Удобства</span> <i class="fa fa-star active"></i><i
+                                                        class="fa fa-star active"></i><i class="fa fa-star "></i><i
+                                                        class="fa fa-star "></i><i class="fa fa-star "></i></p>
+                                                <p><span>Цены</span> <i class="fa fa-star active"></i><i
+                                                        class="fa fa-star active"></i><i class="fa fa-star "></i><i
+                                                        class="fa fa-star "></i><i class="fa fa-star "></i></p>
+                                            </div><!-- /.col-md-4 -->
+                                            <div class="col-md-4">
+                                                <p><span>Еда</span> <i class="fa fa-star active"></i><i
                                                         class="fa fa-star active"></i><i class="fa fa-star "></i><i
                                                         class="fa fa-star "></i><i class="fa fa-star "></i></p>
                                             </div><!-- /.col-md-4 -->
@@ -541,93 +373,27 @@
                                 </div>
                             </div>
                             <div class="tour-details__review-form">
-                                <h3 class="tour-details-two__title">Write a Review</h3>
+                                <h3 class="tour-details-two__title">Написать отзыв </h3>
                                 <div class="row">
                                     <div class="col-xl-6">
                                         <div class="tour-details__review-form-left">
                                             <form action="inc/sendemail.php" class="tour-details__review-form">
                                                 <div class="tour-details__review-form-input">
-                                                    <input type="text" placeholder="Your Name" name="name">
+                                                    <input type="text" placeholder="Ваше имя" name="name">
                                                 </div>
                                                 <div class="tour-details__review-form-input">
-                                                    <input type="email" placeholder="Email Address" name="email">
+                                                    <input type="email" placeholder="Электронная почта" name="email">
                                                 </div>
-                                                <div class="tour-details__review-form-input">
+                                                <!-- <div class="tour-details__review-form-input">
                                                     <input type="text" placeholder="Review Title" name="review">
-                                                </div>
+                                                </div> -->
                                             </form>
                                         </div>
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <div class="tour-details__review-form-rate">
-                                            <div class="tour-details__review-form-rate-single">
-                                                <div class="tour-details__review-form-rate-left">
-                                                    <span>Services</span>
-                                                </div>
-                                                <div class="tour-details__review-form-rate-right">
-                                                    <i class="fa fa-star active"></i>
-                                                    <i class="fa fa-star active"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star "></i>
-                                                    <i class="fa fa-star "></i>
-                                                </div>
-                                            </div>
-                                            <div class="tour-details__review-form-rate-single">
-                                                <div class="tour-details__review-form-rate-left">
-                                                    <span>Locations</span>
-                                                </div>
-                                                <div class="tour-details__review-form-rate-right">
-                                                    <i class="fa fa-star active"></i>
-                                                    <i class="fa fa-star active"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star "></i>
-                                                    <i class="fa fa-star "></i>
-                                                </div>
-                                            </div>
-                                            <div class="tour-details__review-form-rate-single">
-                                                <div class="tour-details__review-form-rate-left">
-                                                    <span>Amenities</span>
-                                                </div>
-                                                <div class="tour-details__review-form-rate-right">
-                                                    <i class="fa fa-star active"></i>
-                                                    <i class="fa fa-star active"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star "></i>
-                                                    <i class="fa fa-star "></i>
-                                                </div>
-                                            </div>
-                                            <div class="tour-details__review-form-rate-single">
-                                                <div class="tour-details__review-form-rate-left">
-                                                    <span>Prices</span>
-                                                </div>
-                                                <div class="tour-details__review-form-rate-right">
-                                                    <i class="fa fa-star active"></i>
-                                                    <i class="fa fa-star active"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star "></i>
-                                                    <i class="fa fa-star "></i>
-                                                </div>
-                                            </div>
-                                            <div class="tour-details__review-form-rate-single">
-                                                <div class="tour-details__review-form-rate-left">
-                                                    <span>Food</span>
-                                                </div>
-                                                <div class="tour-details__review-form-rate-right">
-                                                    <i class="fa fa-star active"></i>
-                                                    <i class="fa fa-star active"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star "></i>
-                                                    <i class="fa fa-star "></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    </div> 
                                 <div class="tour-details__review-form-textarea">
                                     <form action="inc/sendemail.php">
-                                        <textarea placeholder="Write Comment"></textarea>
-                                        <button type="submit" class="thm-btn tour-details__review-form-btn">Submit
-                                            Review</button>
+                                        <textarea placeholder="Комментарий"></textarea>
+                                        <button type="submit" class="thm-btn tour-details__review-form-btn"> Обзор</button>
                                     </form>
                                 </div>
                             </div>
@@ -636,15 +402,15 @@
                     <div class="col-xl-4 col-lg-5">
                         <div class="tour-details-two__sidebar">
                             <div class="tour-details-two__book-tours">
-                                <h3 class="tour-details-two__sidebar-title">Book Tours</h3>
+                                <h3 class="tour-details-two__sidebar-title">Бронирование</h3>
                                 <form action="#" class="tour-details-two__sidebar-form">
                                     <div class="tour-details-two__sidebar-form-input">
-                                        <input type="text" placeholder="Where to" name="where to">
+                                        <input type="text" placeholder="Куда?" name="where to">
                                     </div>
-                                    <div class="tour-details-two__sidebar-form-input">
+                                    <!-- <div class="tour-details-two__sidebar-form-input">
                                         <input type="text" placeholder="When" name="When">
-                                    </div>
-                                    <div class="tour-details-two__sidebar-form-input">
+                                    </div> -->
+                                    <!-- <div class="tour-details-two__sidebar-form-input">
                                         <select class="selectpicker" id="type">
                                             <option value="Adventure">Type</option>
                                             <option value="Adventure">Adventure</option>
@@ -654,14 +420,14 @@
                                         <div class="tour-details-two__sidebar-form-icon">
                                             <i class="fa fa-angle-down"></i>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="tour-details-two__sidebar-form-input">
                                         <input type="text" name="date" placeholder="Select date" id="datepicker">
-                                        <div class="tour-details-two__sidebar-form-icon">
+                                        <!-- <div class="tour-details-two__sidebar-form-icon">
                                             <i class="fa fa-angle-down"></i>
-                                        </div>
+                                        </div> -->
                                     </div>
-                                    <div class="tour-details-two__sidebar-form-input">
+                                    <!-- <div class="tour-details-two__sidebar-form-input">
                                         <select class="selectpicker">
                                             <option value="Adventure">Choose Ticket</option>
                                             <option value="Adventure">Adventure</option>
@@ -671,43 +437,10 @@
                                         <div class="tour-details-two__sidebar-form-icon">
                                             <i class="fa fa-angle-down"></i>
                                         </div>
-                                    </div>
-                                    <button type="submit" class="thm-btn tour-details-two__sidebar-btn">Book
-                                        Now</button>
+                                    </div> -->
+                                    <button type="submit" class="thm-btn tour-details-two__sidebar-btn">Забронировать сейчас</button>
                                 </form>
-                            </div>
-                            <div class="tour-details-two__last-minute">
-                                <h3 class="tour-details-two__sidebar-title">Last Minute</h3>
-                                <ul class="tour-details-two__last-minute-list list-unstyled">
-                                    <li>
-                                        <div class="tour-details-two__last-minute-image">
-                                            <img src="{% static 'assets/images/resources/td-img-1.jpg' %}" alt=""></div>
-                                        <div class="tour-details-two__last-minute-content">
-                                            <h6>$380</h6>
-                                            <h5>Africa 2 Days Tour</h5>
-                                            <p>Los Angeles</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="tour-details-two__last-minute-image">
-                                            <img src="{% static 'assets/images/resources/td-img-2.jpg' %}" alt=""></div>
-                                        <div class="tour-details-two__last-minute-content">
-                                            <h6>$380</h6>
-                                            <h5>Africa 2 Days Tour</h5>
-                                            <p>Los Angeles</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="tour-details-two__last-minute-image">
-                                            <img src="{% static 'assets/images/resources/td-img-3.jpg' %}" alt=""></div>
-                                        <div class="tour-details-two__last-minute-content">
-                                            <h6>$380</h6>
-                                            <h5>Africa 2 Days Tour</h5>
-                                            <p>Los Angeles</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
+                            </div> 
                         </div>
                     </div>
                 </div>
