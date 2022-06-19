@@ -1,4 +1,3 @@
-from tabnanny import verbose
 from django.db import models
 
 # Create your models here.
@@ -19,8 +18,23 @@ class Price(models.Model):
     date = models.DateField()
     price = models.PositiveBigIntegerField()
 
+    def __str__(self):
+        return self.tour
+
+
+    class Meta:
+        verbose_name = "Цена тура"
+        verbose_name_plural = "Цена туров"
+
 
 class Benefits(models.Model):
     tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name="benefits_tour")
     title = models.CharField(max_length=100)
+    description = models.TextField()
 
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Преимущество"
+        verbose_name_plural = "Преимущества"

@@ -5,17 +5,17 @@
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-7 col-7">
                 <div class="list-inline">
-                    <a href="tel:+55-4XX-634-7071"><i class="fa fa-phone"></i>Need Support? +00-4X6-634-781</a>
-                    <a href="tel:info@themevessel.com" class="d-none-768"><i class="fa fa-envelope"></i>info@themevessel.com</a>
+                    <a href="tel:+55-4XX-634-7071"><i class="fa fa-phone"></i>Need Support? {{ home.tel }}</a>
+                    <a href="tel:info@themevessel.com" class="d-none-768"><i class="fa fa-envelope"></i>{{ home.email }}</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-5 col-5">
                 <ul class="top-social-media pull-right">
                     <li>
-                        <a href="login.html" class="sign-in"><i class="fa fa-sign-in"></i> Login</a>
+                        <a href="{% url 'login' %}" class="sign-in"><i class="fa fa-sign-in"></i> Логин</a>
                     </li>
                     <li>
-                        <a href="signup.html" class="sign-in"><i class="fa fa-user"></i> Register</a>
+                        <a href="{% url 'register' %}" class="sign-in"><i class="fa fa-user"></i> Register</a>
                     </li>
                 </ul>
             </div>
@@ -28,7 +28,7 @@
 <header class="main-header" id="main-header-1">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand logos" href="index.html">
+            <a class="navbar-brand logos" href="{% url 'index' %}">
                 <img src="{% static 'img/logos/logo.png' %}" alt="logo">
             </a>
             <button class="navbar-toggler" id="drawer" type="button">
@@ -45,8 +45,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Rooms
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
-                            <li><a class="dropdown-item" href="rooms-col-1.html">Rooms 1 Column</a></li>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2"> 
                             <li><a class="dropdown-item" href="rooms-col-2.html">Rooms 2 Column</a></li>
                             <li><a class="dropdown-item" href="rooms-col-3.html">Rooms 3 Column</a></li>
                             <li><a class="dropdown-item" href="rooms-details.html">Rooms Details 1</a></li>
@@ -112,10 +111,12 @@
                             Contact
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink4">
-                            <li><a class="dropdown-item" href="contact.html">Contact 1</a></li>
-                            <li><a class="dropdown-item" href="contact-2.html">Contact 2</a></li>
+                            <li><a class="dropdown-item" href="contact.html">Contact 1</a></li> 
                         </ul>
                     </li>
+                    <a class="nav-link dropdown-toggle" href="{% url 'login' %}" id="navbarDropdownMenuLink4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Логин
+                    </a>
                     <li class="nav-item sp">
                         <a id="header-search-btn" class="nav-link link-color"><i class="fa fa-search"></i></a>
                     </li>
