@@ -19,8 +19,7 @@ class Price(models.Model):
     price = models.PositiveBigIntegerField()
 
     def __str__(self):
-        return self.tour
-
+        return f"{self.tour}"
 
     class Meta:
         verbose_name = "Цена тура"
@@ -31,6 +30,7 @@ class Benefits(models.Model):
     tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name="benefits_tour")
     title = models.CharField(max_length=100)
     description = models.TextField()
+    equipment = models.CharField(max_length=200)
 
     def __str__(self):
         return self.title

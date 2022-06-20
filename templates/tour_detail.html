@@ -203,14 +203,11 @@
                         <div class="tabbing tabbing-box rooms-description">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Description</button>
+                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Описание</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Amenities</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">House Rules</button>
-                                </li>
+                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Вас ждут</button>
+                                </li> 
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="contact-tab-5" data-bs-toggle="tab" data-bs-target="#contact-5" type="button" role="tab" aria-controls="contact-5" aria-selected="false">Pricing Plans</button>
                                 </li>
@@ -218,7 +215,7 @@
                                     <button class="nav-link" id="contact-tab-6" data-bs-toggle="tab" data-bs-target="#contact-6" type="button" role="tab" aria-controls="contact-6" aria-selected="false">Cancellation</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="contact-tab-4" data-bs-toggle="tab" data-bs-target="#contact-4" type="button" role="tab" aria-controls="contact-4" aria-selected="false">Extra Service</button>
+                                    <button class="nav-link" id="contact-tab-4" data-bs-toggle="tab" data-bs-target="#contact-4" type="button" role="tab" aria-controls="contact-4" aria-selected="false">Экипировка</button>
                                 </li>
                             </ul>
                             <div class="tab-content" id="myTabContent">
@@ -240,87 +237,20 @@
                                         <div class="accordion-item">
                                             <!-- Amenities start -->
                                             <div class="amenities">
-                                                <h3>Amenities</h3>
+                                                <h3>Вас ждут</h3>
+                                                {% for benefit in benefits %}
                                                 <div class="row">
                                                     <div class="col-md-4 col-sm-4 col-xs-12">
                                                         <ul class="condition">
                                                             <li>
-                                                                <i class="flaticon-air-conditioning"></i>Air conditioning
-                                                            </li>
-                                                            <li>
-                                                                <i class="flaticon-balcony-and-door"></i>Balcony
-                                                            </li>
-                                                            <li>
-                                                                <i class="flaticon-weightlifting"></i>Gym
-                                                            </li>
-                                                            <li>
-                                                                <i class="flaticon-parking"></i>Parking
-                                                            </li>
-                                                            <li>
-                                                                <i class="flaticon-sunbed"></i>Beach View
-                                                            </li>
+                                                                <i class="flaticon-mountains"></i>{{ benefit.title }}
+                                                            </li> 
                                                         </ul>
-                                                    </div>
-                                                    <div class="col-md-4 col-sm-4 col-xs-12">
-                                                        <ul class="condition">
-                                                            <li>
-                                                                <i class="flaticon-bed"></i>2 Bedroom
-                                                            </li>
-                                                            <li>
-                                                                <i class="flaticon-person-learning-by-reading"></i>Free Newspaper
-                                                            </li>
-                                                            <li>
-                                                                <i class="flaticon-swimming-silhouette"></i>Use of pool
-                                                            </li>
-                                                            <li>
-                                                                <i class="flaticon-graph-line-screen"></i>TV
-                                                            </li>
-                                                            <li>
-                                                                <i class="flaticon-no-smoking-sign"></i>No Smoking
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="col-md-4 col-sm-4 col-xs-12">
-                                                        <ul class="condition">
-                                                            <li>
-                                                                <i class="flaticon-room-service"></i>Room Service
-                                                            </li>
-                                                            <li>
-                                                                <i class="flaticon-breakfast"></i>Breakfast
-                                                            </li>
-                                                            <li>
-                                                                <i class="flaticon-phone-receiver"></i>Telephone
-                                                            </li>
-                                                            <li>
-                                                                <i class="flaticon-bed"></i>2 Bedroom
-                                                            </li>
-                                                            <li>
-                                                                <i class="flaticon-wifi-connection-signal-symbol"></i>Free Wi-Fi
-                                                            </li>
-                                                        </ul>
-                                                    </div>
+                                                    </div>  
                                                 </div>
+                                                {% endfor %}
                                             </div>
                                             <!-- Amenities end -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade mb-50" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                                    <div class="accordion accordion-flush" id="accordionFlushExample3">
-                                        <div class="accordion-item">
-                                            <!-- House reles start -->
-                                            <div class="house-rules">
-                                                <h3>House Rules</h3>
-                                                <ul>
-                                                    <li><i class="fa fa-hand-o-right"></i> Check-in: 10:00 AM - 7:00 PM</li>
-                                                    <li><i class="fa fa-hand-o-right"></i> Checkout: 11:00 AM</li>
-                                                    <li><i class="fa fa-hand-o-right"></i> No smoking</li>
-                                                    <li><i class="fa fa-hand-o-right"></i> No pets</li>
-                                                    <li><i class="fa fa-hand-o-right"></i> No parties or events</li>
-                                                    <li><i class="fa fa-hand-o-right"></i> Lorem ipsum dolor sit amet, conser adipiscing elit. Donec luctus</li>
-                                                </ul>
-                                            </div>
-                                            <!-- House reles end -->
                                         </div>
                                     </div>
                                 </div>
@@ -364,7 +294,7 @@
                                         <div class="accordion-item">
                                             <!-- Cancellation start  -->
                                             <div class="cancellation">
-                                                <h3>Cancellation</h3>
+                                                <h3>Отмена</h3>
                                                 <p>
                                                     Phasellus volutpat neque a tellus venenatis, a euismod augue facilisis. Fusce ut metus
                                                     mattis, consequat metus nec, luctus lectus. Pellentesque orci quis hendrerit sed eu
@@ -380,27 +310,12 @@
                                         <div class="accordion-item">
                                             <!-- Extra service start  -->
                                             <div class="extra-service">
-                                                <h3>Extra Service</h3>
+                                                <h3>Экипировка</h3>
+                                                {% for eq in benefits %}
                                                 <div class="extra-service-item">
-                                                    <p class="tag-item-name">Air Conditioner </p>
-                                                    <div class="border-centar"></div>
-                                                    <div class="label-items-value"><span class="price">+24$</span>to price per person </div>
+                                                    <p class="tag-item-name">{{ eq.equipment }} </p>  
                                                 </div>
-                                                <div class="extra-service-item">
-                                                    <p class="tag-item-name">Free Internet </p>
-                                                    <div class="border-centar"></div>
-                                                    <div class="label-items-value"><span class="price">+14$</span>to price per person </div>
-                                                </div>
-                                                <div class="extra-service-item">
-                                                    <p class="tag-item-name">LCD Television </p>
-                                                    <div class="border-centar"></div>
-                                                    <div class="label-items-value"><span class="price">+15$</span>to price per person </div>
-                                                </div>
-                                                <div class="extra-service-item">
-                                                    <p class="tag-item-name">Microwave </p>
-                                                    <div class="border-centar"></div>
-                                                    <div class="label-items-value"><span class="price">+30$</span>to price per person </div>
-                                                </div>
+                                                {% endfor %} 
                                             </div>
                                             <!-- Extra service end  -->
                                         </div>
@@ -734,11 +649,9 @@
                         </div>
                         <!-- Social list -->
                         <ul class="social-list">
-                            <li><a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#" class="rss-bg"><i class="fa fa-rss"></i></a></li>
+                            <li><a href="{{ home.facebook}}" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="{{ home.twitter}}" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="{{home.instagram}}" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li> 
                         </ul>
                     </div>
                     <!-- tags box start -->

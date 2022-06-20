@@ -2,6 +2,7 @@
 /** TOP HEADER AREA START **/
 .top-header {
     z-index: 999;
+    background: orange;
 }
 
 .top-header .social-list li {

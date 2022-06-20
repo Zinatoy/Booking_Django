@@ -282,10 +282,9 @@
         <div class="row">
             <div class="col-lg-6 col-md-12 col-sm-12 wow fadeInLeft delay-04s align-self-center">
                 <div class="text">
-                    <h5>Welcome To <span>Alpha</span></h5>
-                    <h1>Finest Luxury Hotels & Resort</h1>
-                    <p class="mb-4">Leather detail shoulder contrastic colour contour stunning silhouette working peplum. Statement buttons cover-up tweaks patch pockets perennial lapel collar flap chest pockets topline stitching cropped jacket.</p>
-                    <p class="mb-30">Exercitation photo booth stumptown tote bag Banksy, elit small batch freegan sed. Craft beer elit seitan exercitation, photo booth et 8-bit kale chips proident<span class="d-none2-1200"> chillwave deep v laborum. Aliquip veniam delectus, Marfa eiusmod Pinterest in do umami readymade swag. Selfies iPhone Kickstarter, drinking vinegar</span></p>
+                    <h5>Welcome To <span>{{ home.title }}</span></h5>
+                    <h1>Лучшие туры по Кыргызстану </h1>
+                    <p class="mb-4">{{ home.description }}</p> 
                     <a class="btn-1 comon-btn" href="rooms-details.html"><span>View Details</span></a>
                 </div>
             </div>
@@ -352,6 +351,7 @@
             </div>
             <div class="col-lg-8 col-md-12 wow fadeInRight delay-04s">
                 <div class="row mls">
+                    {% for facilities in facilities %}
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="services-box-3 df-box">
                             <div class="icon">
@@ -359,47 +359,13 @@
                             </div>
                             <div class="detail">
                                 <h5>
-                                    <a href="#">24-hour Reception</a>
+                                    <a href="#">{{ facilities.title }}</a>
                                 </h5>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the</p>
+                                <p>{{ facilities.description }}</p>
                             </div>
                         </div>
-                        <div class="services-box-3 df-box">
-                            <div class="icon">
-                                <i class="flaticon-parking"></i>
-                            </div>
-                            <div class="detail">
-                                <h5>
-                                    <a href="#">Free Parking</a>
-                                </h5>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <div class="services-box-3 df-box">
-                            <div class="icon">
-                                <i class="flaticon-room-service"></i>
-                            </div>
-                            <div class="detail">
-                                <h5>
-                                    <a href="#">Room Service</a>
-                                </h5>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the</p>
-                            </div>
-                        </div>
-                        <div class="services-box-3 df-box">
-                            <div class="icon">
-                                <i class="flaticon-wifi-connection-signal-symbol"></i>
-                            </div>
-                            <div class="detail">
-                                <h5>
-                                    <a href="#">Free Wi-Fi</a>
-                                </h5>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the</p>
-                            </div>
-                        </div>
-                    </div>
+                    </div> 
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -407,92 +373,7 @@
 </div>
 <!-- Services 2 end -->
 
-<!-- Events section start -->
-<div class="events-secion content-area">
-    <div class="container">
-        <div class="main-title">
-            <h1>Recent Events</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
-        </div>
-        <div class="events-box-3 wow fadeInLeft delay-04s">
-            <div class="event-thumb">
-                <img src="{% static 'img/events/img-3.jpg' %}" alt="image">
-            </div>
-            <div class="event-content">
-                <ul class="meta">
-                    <li>
-                        <a class="category" href="events-details.html">Wedding Party</a>
-                    </li>
-                    <li>
-                        <a href="#" class="date">
-                            <i class="fa fa-map-marker"></i>17 Main Street ,New York
-                        </a>
-                    </li>
-                </ul>
-                <h4 class="event-title">
-                    <a href="events-details.html">Wedding David & karen</a>
-                </h4>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-            </div>
-            <div class="event-button clearfix">
-                <a class="main-btn bordered-btn" href="events-details.html">Join Event <i class="fa fa-long-arrow-right"></i></a>
-            </div>
-        </div>
-        <div class="events-box-3 wow fadeInRight delay-04s">
-            <div class="event-thumb">
-                <img src="{% static 'img/events/img-1.jpg' %}" alt="image">
-            </div>
-            <div class="event-content">
-                <ul class="meta">
-                    <li>
-                        <a class="category" href="events-details.html">Music Party</a>
-                    </li>
-                    <li>
-                        <a href="#" class="date">
-                            <i class="fa fa-map-marker"></i>17 Main Street ,New York
-                        </a>
-                    </li>
-                </ul>
-                <h4 class="event-title">
-                    <a href="events-details.html">Festival Music Electronic</a>
-                </h4>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-            </div>
-            <div class="event-button clearfix">
-                <a class="main-btn bordered-btn" href="events-details.html">Join Event <i class="fa fa-long-arrow-right"></i></a>
-            </div>
-        </div>
-        <div class="events-box-3 wow fadeInLeft delay-04s">
-            <div class="event-thumb">
-                <img src="{% static 'img/events/img-2.jpg' %}" alt="image">
-            </div>
-            <div class="event-content">
-                <ul class="meta">
-                    <li>
-                        <a class="category" href="events-details.html">Fool Party</a>
-                    </li>
-                    <li>
-                        <a href="#" class="date">
-                            <i class="fa fa-map-marker"></i>17 Main Street ,New York
-                        </a>
-                    </li>
-                </ul>
-                <h4 class="event-title">
-                    <a href="events-details.html">Pool Party in summer</a>
-                </h4>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-            </div>
-            <div class="event-button clearfix">
-                <a class="main-btn bordered-btn" href="events-details.html">Join Event <i class="fa fa-long-arrow-right"></i></a>
-            </div>
-        </div>
-        <div class="text-center mb-30">
-            <a class="btn-lg btn-1" href="events.html"><span>Browse More Events</span></a>
-        </div>
-    </div>
-</div>
-<!-- Events section end -->
-
+ 
 <!-- Counters 2 strat -->
 <div class="bg-white counters-2">
     <div class="container">
@@ -535,141 +416,20 @@
             <p>Meet out small team that make those great products.</p>
         </div>
         <div class="slick row comon-slick-inner wow fadeInUp delay-04s" data-slick='{"slidesToShow": 4, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
+            {% for staff in staff %}
             <div class="item slide-box">
-                <div class="staff-box-1">
-                    <div class="photo">
-                        <img src="{% static 'img/staff/img-1.jpg' %}" alt="staff" class="img-fluid w-100">
-                        <div class="overlay">
-                            <div class="border">
-                                <div class="icon-holder">
-                                    <a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a>
-                                </div>
-                                <div class="icon-holder">
-                                    <a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a>
-                                </div>
-                                <div class="icon-holder">
-                                    <a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="staff-box-1"> 
                     <div class="content">
+                        <img src="{{ staff.image.url }}" alt="staff" class="img-fluid w-100">
                         <h4 class="title">
-                            <a href="staff.html">Zamil Roy</a>
+                            <a href="staff.html">{{ staff.name }}</a>
                         </h4>
-                        <p>Hotel Developer</p>
-                        <p><a href="tel:+55-417-634-7071">+1 204 777 0187</a></p>
+                        <p>{{ staff.position }}</p>
+                        <p><a href="tel:+55-417-634-7071">{{ staff.tel }}</a></p>
                     </div>
                 </div>
-            </div>
-            <div class="item slide-box">
-                <div class="staff-box-1">
-                    <div class="photo">
-                        <img src="{% static 'img/staff/img-2.jpg' %}" alt="staff" class="img-fluid w-100">
-                        <div class="overlay">
-                            <div class="border">
-                                <div class="icon-holder">
-                                    <a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a>
-                                </div>
-                                <div class="icon-holder">
-                                    <a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a>
-                                </div>
-                                <div class="icon-holder">
-                                    <a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title">
-                            <a href="staff.html">Karen Paran</a>
-                        </h4>
-                        <p>Hotel Director</p>
-                        <p><a href="tel:+55-417-634-7071">+1 204 777 0187</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="item slide-box">
-                <div class="staff-box-1">
-                    <div class="photo">
-                        <img src="{% static 'img/staff/img-1.jpg' %}" alt="staff" class="img-fluid w-100">
-                        <div class="overlay">
-                            <div class="border">
-                                <div class="icon-holder">
-                                    <a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a>
-                                </div>
-                                <div class="icon-holder">
-                                    <a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a>
-                                </div>
-                                <div class="icon-holder">
-                                    <a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title">
-                            <a href="staff.html">Zamil Roy</a>
-                        </h4>
-                        <p>Hotel Developer</p>
-                        <p><a href="tel:+55-417-634-7071">+1 204 777 0187</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="item slide-box">
-                <div class="staff-box-1">
-                    <div class="photo">
-                        <img src="{% static 'img/staff/img-4.jpg' %}" alt="staff" class="img-fluid w-100">
-                        <div class="overlay">
-                            <div class="border">
-                                <div class="icon-holder">
-                                    <a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a>
-                                </div>
-                                <div class="icon-holder">
-                                    <a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a>
-                                </div>
-                                <div class="icon-holder">
-                                    <a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title">
-                            <a href="staff.html">Shakira Kaisar</a>
-                        </h4>
-                        <p>Support Manager</p>
-                        <p><a href="tel:+55-417-634-7071">+1 204 777 0187</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="item slide-box">
-                <div class="staff-box-1">
-                    <div class="photo">
-                        <img src="{% static 'img/staff/img-3.jpg' %}" alt="staff" class="img-fluid w-100">
-                        <div class="overlay">
-                            <div class="border">
-                                <div class="icon-holder">
-                                    <a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a>
-                                </div>
-                                <div class="icon-holder">
-                                    <a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a>
-                                </div>
-                                <div class="icon-holder">
-                                    <a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title">
-                            <a href="staff.html">Maikel John </a>
-                        </h4>
-                        <p>Hotel Manager</p>
-                        <p><a href="tel:+55-417-634-7071">+1 204 777 0187</a></p>
-                    </div>
-                </div>
-            </div>
+            </div>   
+            {% endfor %}
         </div>
     </div>
 </div>
@@ -774,58 +534,7 @@
 </div>
 <!-- Testimonial 5 end -->
 
-<!-- Blog section start -->
-<div class="blog-section content-area bg-white">
-    <div class="container">
-        <!-- Main title -->
-        <div class="main-title">
-            <h1>Our Blog</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 wow fadeInLeft delay-04s">
-                <div class="blog-4">
-                    <div class="inner-box">
-                        <div class="image-box w-100"><img src="{% static 'img/blog/img-3.jpg' %}" alt="blog-image"></div>
-                        <div class="content-box">
-                            <div class="post-date">
-                                <span>14</span>Sep
-                            </div>
-                            <div class="text">
-                                <h4><a href="blog-details.html">Best Night Photo at Alpha Hotel </a></h4>
-                                <ul class="post-info clearfix">
-                                    <li><i class="fa fa-user"></i><a href="blog-details.html">Tanzim Sorna</a></li>
-                                    <li><i class="fa fa-comment"></i><a href="blog-details.html">2 Comments</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-8 col-md-6 wow fadeInRight delay-04s">
-                <div class="blog-4">
-                    <div class="inner-box">
-                        <div class="image-box width-auto"><img src="{% static 'img/blog/img-1.jpg' %}" alt="blog-image"></div>
-                        <div class="content-box">
-                            <div class="post-date">
-                                <span>06</span>Feb
-                            </div>
-                            <div class="text">
-                                <h4><a href="blog-details.html">Standard Post Format Title</a></h4>
-                                <ul class="post-info clearfix">
-                                    <li><i class="fa fa-user"></i><a href="blog-details.html">Tanzim Sorna</a></li>
-                                    <li><i class="fa fa-comment"></i><a href="blog-details.html">2 Comments</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Blog section end -->
-
+ 
 <!-- Our newslatters strat -->
 <div class="our-newslatters">
     <div class="container">

@@ -7,6 +7,9 @@ class Setting(models.Model):
     email = models.EmailField(max_length=255)
     tel = models.CharField(max_length=100)
     description = models.TextField()
+    facebook = models.CharField(max_length=255)
+    twitter = models.CharField(max_length=255)
+    instagram = models.CharField(max_length=255)
 
     def __str__(self):
         return self.title
@@ -40,3 +43,14 @@ class TourBooking(models.Model):
     class Meta:
         verbose_name = "Бронь тура"
         verbose_name_plural = "Бронь туров"
+
+class Facilities(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Удобства"
+        verbose_name_plural = "Удобствы"

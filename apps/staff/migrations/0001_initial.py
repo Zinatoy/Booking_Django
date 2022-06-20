@@ -12,15 +12,17 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Location',
+            name='Staff',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=255)),
-                ('image', models.ImageField(upload_to='location_image/')),
+                ('name', models.CharField(max_length=100)),
+                ('position', models.CharField(max_length=150)),
+                ('tel', models.PositiveBigIntegerField()),
+                ('image', models.ImageField(upload_to='staff-image/')),
             ],
             options={
-                'verbose_name': 'Локация',
-                'verbose_name_plural': 'Локации',
+                'verbose_name': 'Cотрудник',
+                'verbose_name_plural': 'Cотрудники',
             },
         ),
     ]
