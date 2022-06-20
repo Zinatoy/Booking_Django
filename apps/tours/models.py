@@ -13,6 +13,14 @@ class Tour(models.Model):
         verbose_name = "Тур"
         verbose_name_plural = "Туры"
 
+class TourImage(models.Model):
+    tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name="tour_image", null=True)
+    tour_image = models.ImageField(upload_to = "tour_image/", null = True, blank = True)
+
+    class Meta:
+        verbose_name = "Картинка тура"
+        verbose_name_plural = "Картинки туров"
+
 class Price(models.Model):
     tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name="price_tour")
     date = models.DateField()

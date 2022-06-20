@@ -10,6 +10,7 @@ class Setting(models.Model):
     facebook = models.CharField(max_length=255)
     twitter = models.CharField(max_length=255)
     instagram = models.CharField(max_length=255)
+    image = models.ImageField(upload_to = "setting-image/")
 
     def __str__(self):
         return self.title

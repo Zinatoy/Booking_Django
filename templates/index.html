@@ -6,9 +6,9 @@
  
 
 <!-- Sidenav start -->
-<nav id="sidebar" class="nav-sidebar sidebar-heading-section">
+<!-- <nav id="sidebar" class="nav-sidebar sidebar-heading-section"> -->
     <!-- Close btn-->
-    <div id="dismiss">
+    <!-- <div id="dismiss">
         <i class="fa fa-close"></i>
     </div>
     <div class="sidebar-inner">
@@ -18,7 +18,7 @@
         <div class="sidebar-navigation">
             <h3 class="heading">Pages</h3>
             <ul class="menu-list">
-                <li><a href="#" class="active pt0">Index <em class="fa fa-chevron-down"></em></a>
+                <li><a href="#" class="active pt0">I  <em class="fa fa-chevron-down"></em></a>
                     <ul>
                         <li><a href="index.html">Index 1</a></li>
                         <li><a href="index-2.html">Index 2</a></li>
@@ -139,7 +139,7 @@
             </a>
         </div>
     </div>
-</nav>
+</nav> -->
 <!-- Sidenav end -->
 
 <!-- Banner start -->
@@ -205,7 +205,7 @@
 <!-- Banner end -->
 
 <!-- Search area box 1 start -->
-<div class="search-area-box-1">
+<!-- <div class="search-area-box-1">
     <div class="container">
         <div class="search-contents">
             <form method="GET">
@@ -273,7 +273,7 @@
             </form>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Search area box 1 end -->
 
 <!-- About hotel alpha 2 start -->
@@ -282,15 +282,15 @@
         <div class="row">
             <div class="col-lg-6 col-md-12 col-sm-12 wow fadeInLeft delay-04s align-self-center">
                 <div class="text">
-                    <h5>Welcome To <span>{{ home.title }}</span></h5>
+                    <h5> {{ home.title }} </h5>
                     <h1>Лучшие туры по Кыргызстану </h1>
                     <p class="mb-4">{{ home.description }}</p> 
-                    <a class="btn-1 comon-btn" href="rooms-details.html"><span>View Details</span></a>
+                    <a class="btn-1 comon-btn" href="rooms-details.html"><span></span></a>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12 wow fadeInRight delay-04s">
                 <div class="hotel-banner">
-                    <img src="{% static 'img/about/img-6.jpg' %}" alt="photo" class="img-fluid w-100">
+                    <img src="{{ home.image.url }}" alt="photo" class="img-fluid w-100">
                 </div>
             </div>
         </div>
