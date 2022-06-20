@@ -258,30 +258,20 @@
                                             <!-- Pricing plans start -->
                                             <div class="pricing-table">
                                                 <h3>Pricing Plans</h3>
+                                                {% for price in price %}
                                                 <table class="table-responsive pricing-wrap">
                                                     <thead>
                                                     <tr>
-                                                        <th>Mon</th>
-                                                        <th>Tue</th>
-                                                        <th>Wed</th>
-                                                        <th>Thu</th>
-                                                        <th>Fri</th>
-                                                        <th>Sat</th>
-                                                        <th>Sun</th>
+                                                        <th>{{ price.date }}</th> 
                                                     </tr>
                                                     </thead>
                                                     <tbody>
                                                     <tr>
-                                                        <td>$250</td>
-                                                        <td>$250</td>
-                                                        <td>$250</td>
-                                                        <td>$250</td>
-                                                        <td>$250</td>
-                                                        <td>$250</td>
-                                                        <td>$250</td>
+                                                        <td>{{ price.price }}</td> 
                                                     </tr>
                                                     </tbody>
                                                 </table>
+                                                {% endfor %}
                                             </div>
                                             <!-- Pricing plans end -->
                                         </div>
@@ -624,21 +614,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Category posts start -->
-                    <div class="sidebar-widget category-posts">
-                        <div class="main-title-2">
-                            <h1>Category</h1>
-                        </div>
-                        <ul class="list-unstyled list-cat">
-                            <li><a href="#">Air Conditioner	 <span>(45)</span></a></li>
-                            <li><a href="#">Promotion <span>(21)</span></a></li>
-                            <li><a href="#">Events <span>(23)</span></a></li>
-                            <li><a href="#">Creative <span>(19)</span></a></li>
-                            <li><a href="#">Design <span>(19)</span></a></li>
-                            <li><a href="#">Other <span>(22)</span></a></li>
-                        </ul>
-                    </div>
+                    </div> 
                     <!-- Social media start -->
                     <div class="social-media sidebar-widget clearfix">
                         <!-- Main Title 2 -->
@@ -651,24 +627,7 @@
                             <li><a href="{{ home.twitter}}" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="{{home.instagram}}" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li> 
                         </ul>
-                    </div>
-                    <!-- tags box start -->
-                    <div class="sidebar-widget tags-box">
-                        <div class="main-title-2">
-                            <h1>Tags</h1>
-                        </div>
-                        <ul class="tags">
-                            <li><a href="#">Rooms</a></li>
-                            <li><a href="#">Promotion</a></li>
-                            <li><a href="#">Creative</a></li>
-                            <li><a href="#">Events</a></li>
-                            <li><a href="#">Design</a></li>
-                            <li><a href="#">Gallery</a></li>
-                            <li><a href="#">Travel</a></li>
-                            <li><a href="#">Video</a></li>
-                            <li><a href="#">Audio</a></li>
-                        </ul>
-                    </div>
+                    </div> 
                     <!-- Location start  -->
                     <div class="location sidebar-widget">
                         <div class="map">
@@ -678,35 +637,7 @@
                             </div>
                             <div id="map" class="contact-map" style="height: 662px;"></div>
                         </div>
-                    </div>
-                    <!-- Recent comments start -->
-                    <div class="sidebar-widget recent-comments">
-                        <div class="main-title-2">
-                            <h1>Recent comments</h1>
-                        </div>
-                        <div class="recent-comments-item mb-4">
-                            <div class="thumb">
-                                <a href="#">
-                                    <img src="{% static 'img/avatar/avatar-1.jpg' %}" alt="avatar">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <p>Lorem ipsum dolor sit amet, conser adipiscing elit. Maecenas in pulvinar neque. </p>
-                                <span>By <b>Karen Paran</b></span>
-                            </div>
-                        </div>
-                        <div class="recent-comments-item">
-                            <div class="thumb">
-                                <a href="#">
-                                    <img src="{% static 'img/avatar/avatar-2.jpg' %}" alt="avatar">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <p>Lorem ipsum dolor sit amet, conser adipiscing elit. Maecenas in pulvinar neque. </p>
-                                <span>By <b> Zamil Roy</b></span>
-                            </div>
-                        </div>
-                    </div>
+                    </div> 
                 </div>
             </div>
         </div>

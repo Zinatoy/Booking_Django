@@ -54,24 +54,11 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Pages
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Gallery</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="gallery-3column.html">Gallery 3 Column</a></li> 
-                                </ul>
-                            </li>
-                            <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">About Us</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="about.html">About Us 1</a></li> 
-                                </ul>
-                            </li>
-                            <li><a class="dropdown-item" href="booking-system.html">Booking System</a>
-                            <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Staff</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="staff.html">Staff 1</a></li> 
-                                </ul>
-                            </li> 
-                            <li><a class="dropdown-item" href="pricing-tables.html">Pricing Tables</a> 
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> 
+                            <li><a class="dropdown-item" href="gallery-3column.html">Gallery 3 Column</a></li>   
+                            <li><a class="dropdown-item" href="{% url 'about_us' %}">О нас</a></li>  
+                            <li><a class="dropdown-item" href="booking-system.html">Booking System</a> 
+                            <li><a class="dropdown-item" href="{% url 'staff' %}">Сотрудники </a></li>  
                             <li><a class="dropdown-item" href="faq.html">Faq</a>  
                             <li><a class="dropdown-item" href="404.html">404 Error</a>
                         </ul>
