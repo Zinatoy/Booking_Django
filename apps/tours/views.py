@@ -1,6 +1,7 @@
-from django.shortcuts import render
-from apps.tours.models import Tour,Price,Benefits
+from django.shortcuts import render,redirect
+from apps.tours.models import Tour,Price,Benefits,Comment
 from apps.settings.models import Setting
+
 
 # Create your views here.
 def tour_detail(request, id):
@@ -9,6 +10,12 @@ def tour_detail(request, id):
     benefits = Benefits.objects.all()
     price = Price.objects.all()
     
+    if 'comment' in request.POST:
+        id = request.POST.get('post_id')
+        message = request.POST.get('comment_message')
+        comment = Comment.objects.create(message=message, tour=tour, user=request.user)
+        return redirect('tour_detail', tour.id)
+
     context = {
         'home' : home,
         'tour' : tour,

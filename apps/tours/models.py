@@ -1,4 +1,5 @@
 from django.db import models
+from apps.users.models import User
 
 # Create your models here.
 class Tour(models.Model):
@@ -46,3 +47,18 @@ class Benefits(models.Model):
     class Meta:
         verbose_name = "Преимущество"
         verbose_name_plural = "Преимущества"
+
+
+
+class Comment(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user")
+    tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name="comment_tour")
+    message = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.message
+
+    class Meta:
+        verbose_name = "Коментарий"
+        verbose_name_plural = "Коментарии"
