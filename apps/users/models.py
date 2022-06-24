@@ -6,6 +6,7 @@ class User(AbstractUser):
     name = models.CharField(max_length=255)
     surname = models.CharField(max_length=255)
     email = models.EmailField(max_length=255, blank=True, null = True)
+    profile_image = models.ImageField(upload_to="profile_image/")
 
 
     def __str__(self):

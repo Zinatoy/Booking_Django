@@ -1,0 +1,91 @@
+{% extends 'homepage.html' %}
+{% load static %}
+{% block content %}
+{% include 'include/header.html' %}
+
+<!-- rooms section start -->
+<div class="content-area rooms-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <!-- {% for tour in tour %} -->
+                <div class="hotel-box">
+                    <!-- Photo thumbnail -->
+                    <div class="photo-thumbnail">
+                        <!-- {% for tour in tours %} -->
+                        <div class="photo">
+                            <img class="img-fluid w-100" src="{{ tour.image.url }}" alt="photo">
+                            <a href="rooms-details.html">
+                                <span class="blog-one__plus"></span>
+                            </a>
+                        </div>
+                        <!-- {% endfor %} -->
+                        <div class="pr"> 
+                            $567.99/Night
+                        </div>
+                    </div>
+                    <!-- Detail -->
+                    <div class="detail clearfix">
+                        <h3>
+                            <a href="rooms-details.html">{{ tour.title }}</a>
+                        </h3>
+                        <p class="location">
+                            <a href="rooms-details.html">
+                                <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City,
+                            </a>
+                        </p>
+                        {% for benefits in benefits %}
+                        <div class="fecilities">
+                            <ul>
+                                <li>
+                                    <i class="flaticon-bed"></i> {{ benefits.title }}
+                                </li> 
+                            </ul>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <!-- {% endfor %} -->
+            </div>   
+        </div>
+        <!-- Page navigation start -->
+        <div class="pagination-box">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#"><i class="fa fa-angle-left"></i></a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="rooms-col-1.html">1</a></li>
+                    <li class="page-item"><a class="page-link active" href="rooms-col-2.html">2</a></li>
+                    <li class="page-item"><a class="page-link" href="rooms-col-3.html">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="rooms-col-3.html"><i class="fa fa-angle-right"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Page navigation end -->
+    </div>
+</div>
+<!-- rooms section end -->
+
+<!-- Intro section start -->
+<div class="intro-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12">
+                <div class="intro-text">
+                    <h3>Become An Instructor</h3>
+                    <p>Join thousand of instructors and earn money hassle free</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <a href="contact.html" class="button btn-3">Contact now</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- intro section end -->
+
+{% include 'include/footer.html' %}
+{% endblock %}

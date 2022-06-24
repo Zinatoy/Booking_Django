@@ -4,7 +4,7 @@ from apps.tours.models import Tour, Price, Benefits, TourImage,Comment
 # Register your models here.
 class TourImageAdmin(admin.TabularInline):
     model = TourImage
-    extra = 6
+    extra = 0
 
 class TourAdmin(admin.ModelAdmin):
     inlines = [TourImageAdmin]

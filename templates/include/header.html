@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-7 col-7">
                 <div class="list-inline">
-                    <a href="tel:+55-4XX-634-7071"><i class="fa fa-phone"></i>Need Support? {{ home.tel }}</a>
+                    <a href="tel:+55-4XX-634-7071"><i class="fa fa-phone"></i>Нужно наша помощь? {{ home.tel }}</a>
                     <a href="tel:info@themevessel.com" class="d-none-768"><i class="fa fa-envelope"></i>{{ home.email }}</a>
                 </div>
             </div>
@@ -15,7 +15,7 @@
                         <a href="{% url 'login' %}" class="sign-in"><i class="fa fa-sign-in"></i> Логин</a>
                     </li>
                     <li>
-                        <a href="{% url 'register' %}" class="sign-in"><i class="fa fa-user"></i> Register</a>
+                        <a href="{% url 'register' %}" class="sign-in"><i class="fa fa-user"></i> Регистрация</a>
                     </li>
                 </ul>
             </div>
@@ -38,34 +38,33 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown active">
                         <a class="nav-link " href="{% url 'index' %}" >
-                            Index
+                            Домой
                         </a> 
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Rooms
+                            Туры
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2"> 
-                            <li><a class="dropdown-item" href="rooms-col-2.html">Rooms 2 Column</a></li>    
-                            <li><a class="dropdown-item" href="rooms-details-2.html">Rooms Details 2</a></li>
+                            <li><a class="dropdown-item" href="{% url 'tour_list' %}">Список туров </a></li> 
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Pages
+                            Страницы
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> 
-                            <li><a class="dropdown-item" href="gallery-3column.html">Gallery 3 Column</a></li>   
+                            <!-- <li><a class="dropdown-item" href="gallery-3column.html">Gallery 3 Column</a></li>    -->
                             <li><a class="dropdown-item" href="{% url 'about_us' %}">О нас</a></li>  
-                            <li><a class="dropdown-item" href="booking-system.html">Booking System</a> 
+                            <li><a class="dropdown-item" href="booking-system.html">Бронирование</a> 
                             <li><a class="dropdown-item" href="{% url 'staff' %}">Сотрудники </a></li>  
-                            <li><a class="dropdown-item" href="faq.html">Faq</a>  
+                            <li><a class="dropdown-item" href="faq.html">ЧАсто задаваемые вопросы</a>  
                             <li><a class="dropdown-item" href="404.html">404 Error</a>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Contact
+                            Связаться с нами
                         </a> 
                     </li> 
                     <li class="nav-item sp">
@@ -79,7 +78,7 @@
                 <form class="form-inline" action="{% url 'index' %}" method="get">
                     <input type="text" class="form-control" id="searchKey" placeholder="Search..." name="search">
                     <div class="search-btns">
-                        <button type="submit" class="btn btn-default">Search</button>
+                        <button type="submit" class="btn btn-default">Поиск</button>
                     </div>
                 </form>
             </div>
