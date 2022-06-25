@@ -50,7 +50,7 @@ class Benefits(models.Model):
 
 
 
-class Comment(models.Model):
+class TourComment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user")
     tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name="comment_tour")
     message = models.TextField()
@@ -62,3 +62,6 @@ class Comment(models.Model):
     class Meta:
         verbose_name = "Коментарий"
         verbose_name_plural = "Коментарии"
+
+ 
+

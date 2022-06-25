@@ -11,8 +11,8 @@
         </div>
         <nav class="breadcrumbs">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item active">About Us</li>
+                <li class="breadcrumb-item"><a href="index.html">Домой</a></li>
+                <li class="breadcrumb-item active">О нас</li>
             </ol>
         </nav>
     </div>
@@ -26,12 +26,12 @@
             <div class="col-lg-6 col-md-12">
                 <div class="about-img-section">
                     <div class="image-box">
-                        <div class="image-1"><img src="img/about/img-4.jpg" class="rounded" alt="photo"></div>
+                        <div class="image-1"><img src="{{ about.image.url }}" class="rounded" alt="photo"></div>
                         <div class="image-2"><img src="img/about/img-5.jpg" class="rounded" alt="photo"></div>
                     </div>
                     <div class="about-box-Experience">
                         <h3 class="text-white">38</h3>
-                        <p class="mb-0 text-white">Years of Experience</p>
+                        <p class="mb-0 text-white">{{home.description}}</p>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                             <h4>{{ about.title }}</h4>
                             <p>{{ about.description }}</p>
                         </li>
-                        {% endfor %} >
+                        {% endfor %} 
                     </ul>
                     <a class="btn-lg btn-5" href="#"><span>Explore More</span></a>
                 </div>
@@ -61,8 +61,7 @@
         <div class="container">
             <!-- Main title -->
             <div class="main-title">
-                <h1>Our Facilties</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                <h1>Our Facilties</h1> 
             </div>
             <div class="row">
                 {% for facilities in facilities%}
@@ -251,20 +250,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <div class="staff-box-1"> 
                         <div class="content">
-                            <img src="{{ staff.image.url }}" alt="staff" class="img-fluid w-100">
-                            <div class="overlay">
-                                <div class="border">
-                                    <div class="icon-holder">
-                                        <a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a>
-                                    </div>
-                                    <div class="icon-holder">
-                                        <a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a>
-                                    </div>
-                                    <div class="icon-holder">
-                                        <a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
+                            <img src="{{ staff.image.url }}" alt="staff" width="200" height="170"> 
                             <h4 class="title">
                                 <a href="staff.html">{{ staff.name }}</a>
                             </h4>

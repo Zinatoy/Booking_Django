@@ -1,5 +1,5 @@
 from django.contrib import admin
-from apps.tours.models import Tour, Price, Benefits, TourImage,Comment
+from apps.tours.models import Tour, Price, Benefits, TourImage,TourComment
 
 # Register your models here.
 class TourImageAdmin(admin.TabularInline):
@@ -14,4 +14,4 @@ admin.site.register(Tour, TourAdmin)
 admin.site.register(Price)
 admin.site.register(Benefits)
 admin.site.register(TourImage)
-admin.site.register(Comment)
+admin.site.register(TourComment)
